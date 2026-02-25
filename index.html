@@ -236,7 +236,7 @@
             const isTarget = primaryTarget.includes(p.neighborhood);
             const scoreClass = (p.hoodScore || 0) >= 90 ? 'score-high' : (p.hoodScore || 0) >= 70 ? 'score-med' : 'score-low';
             return `<tr>
-                <td><a href="https://www.redfin.com/search#query=${encodeURIComponent(p.address)}" target="_blank" style="color:#58a6ff;text-decoration:none;">${p.address}</a></td>
+                <td><a href="https://www.google.com/search?q=redfin+${encodeURIComponent(p.address)}&btnI=1" target="_blank" style="color:#58a6ff;text-decoration:none;">${p.address}</a></td>
                 <td><span class="neighborhood-badge ${scoreClass}">${p.neighborhood}${isTarget ? ' ⭐' : ''}</span></td>
                 <td>${p.hoodScore || '--'}</td>
                 <td class="price">$${(p.price/1000).toFixed(0)}K</td>
