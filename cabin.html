@@ -198,7 +198,7 @@
         tbody.innerHTML = filtered.map(p => {
             const yc = p.yield >= 15 ? 'yield-high' : p.yield >= 10 ? 'yield-med' : 'yield-low';
             return `<tr>
-                <td>${p.address}</td>
+                <td><a href="https://www.redfin.com/search#query=${encodeURIComponent(p.address)}" target="_blank" style="color:#58a6ff;text-decoration:none;">${p.address}</a></td>
                 <td><span class="area-badge ${areaClass(p.area)}">${p.area}</span></td>
                 <td class="price">$${(p.price/1000).toFixed(0)}K</td>
                 <td>${p.beds}</td>
