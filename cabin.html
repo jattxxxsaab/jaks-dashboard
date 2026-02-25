@@ -133,6 +133,11 @@
     </div>
 
     <script>
+    function redfin(addr) {
+        const slug = addr.replace(/[#,\.]/g, '').replace(/\s+/g, '-');
+        return `https://www.zillow.com/homes/${slug}_rb/`;
+    }
+
     let DATA = { properties: [], market: {} };
 
     async function loadData() {
@@ -198,7 +203,7 @@
         tbody.innerHTML = filtered.map(p => {
             const yc = p.yield >= 15 ? 'yield-high' : p.yield >= 10 ? 'yield-med' : 'yield-low';
             return `<tr>
-                <td><a href="https://www.google.com/search?q=redfin+${encodeURIComponent(p.address)}&btnI=1" target="_blank" style="color:#58a6ff;text-decoration:none;">${p.address}</a></td>
+                <td><a href="${redfin(p.address)}" target="_blank" style="color:#58a6ff;text-decoration:none;">${p.address}</a></td>
                 <td><span class="area-badge ${areaClass(p.area)}">${p.area}</span></td>
                 <td class="price">$${(p.price/1000).toFixed(0)}K</td>
                 <td>${p.beds}</td>
