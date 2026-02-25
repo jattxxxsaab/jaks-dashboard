@@ -22,7 +22,8 @@
       "occupancy": 66,
       "adr": 183,
       "dom": null,
-      "airdnaId": "3yd-MLSLCA-ML81976411"
+      "airdnaId": "3yd-MLSLCA-ML81976411",
+      "areaScore": 73
     },
     {
       "address": "11120 Lake Blvd, Felton CA 95018",
@@ -36,7 +37,8 @@
       "occupancy": 72,
       "adr": 401,
       "dom": null,
-      "airdnaId": "3yd-MLSLCA-ML81990152"
+      "airdnaId": "3yd-MLSLCA-ML81990152",
+      "areaScore": 68
     },
     {
       "address": "28 Kadderly Lane, Watsonville CA 95076",
@@ -50,7 +52,8 @@
       "occupancy": 42,
       "adr": 402,
       "dom": 65,
-      "airdnaId": "3yd-CDARCA-219140297"
+      "airdnaId": "3yd-CDARCA-219140297",
+      "areaScore": 50
     },
     {
       "address": "322 Arthur Ave, Aptos CA 95003",
@@ -64,7 +67,8 @@
       "occupancy": 54,
       "adr": 589,
       "dom": 95,
-      "airdnaId": "3yd-BMLSCA-41118044"
+      "airdnaId": "3yd-BMLSCA-41118044",
+      "areaScore": 54
     },
     {
       "address": "120 Gharkey St Unit 1, Santa Cruz CA 95060",
@@ -78,7 +82,8 @@
       "occupancy": 63,
       "adr": 236,
       "dom": null,
-      "airdnaId": "3yd-EV-AM-5044061"
+      "airdnaId": "3yd-EV-AM-5044061",
+      "areaScore": 73
     },
     {
       "address": "67 Pelican Pt, Watsonville CA 95076",
@@ -87,12 +92,13 @@
       "beds": 3,
       "baths": 2,
       "sqft": 1280,
-      "yield": 6.0,
+      "yield": 6,
       "revenue": 63000,
       "occupancy": 36,
       "adr": 477,
       "dom": 498,
-      "airdnaId": "3yd-CLAWCA-24-453035"
+      "airdnaId": "3yd-CLAWCA-24-453035",
+      "areaScore": 50
     },
     {
       "address": "520 Laguna Crk, Los Gatos CA 95033",
@@ -101,12 +107,13 @@
       "beds": 2,
       "baths": 2,
       "sqft": 2017,
-      "yield": 5.0,
+      "yield": 5,
       "revenue": 25200,
       "occupancy": 45,
       "adr": 152,
       "dom": null,
-      "airdnaId": "3yd-MLSLCA-ML81974592"
+      "airdnaId": "3yd-MLSLCA-ML81974592",
+      "areaScore": 66
     },
     {
       "address": "5301 Freedom Blvd, Aptos CA 95003",
@@ -115,12 +122,13 @@
       "beds": 2,
       "baths": 1,
       "sqft": 900,
-      "yield": 4.0,
+      "yield": 4,
       "revenue": 34300,
       "occupancy": 45,
       "adr": 208,
       "dom": null,
-      "airdnaId": "3yd-MLSLCA-ML81994546"
+      "airdnaId": "3yd-MLSLCA-ML81994546",
+      "areaScore": 54
     }
   ]
 }

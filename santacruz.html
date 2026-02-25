@@ -108,6 +108,7 @@
                 <tr>
                     <th>Address</th>
                     <th>Area</th>
+                    <th>Score</th>
                     <th>Price</th>
                     <th>Bed</th>
                     <th>Bath</th>
@@ -198,6 +199,7 @@
             return `<tr>
                 <td><a href="${zillow(p.address)}" target="_blank" style="color:#58a6ff;text-decoration:none;">${p.address}</a></td>
                 <td><span class="area-badge ${ac(p.area)}">${p.area}</span></td>
+                <td style="color:${(p.areaScore||0)>=70?'#3fb950':(p.areaScore||0)>=50?'#d29922':'#f85149'};font-weight:700">${p.areaScore||'--'}</td>
                 <td class="price">$${p.price >= 1000000 ? (p.price/1000000).toFixed(2) + 'M' : (p.price/1000).toFixed(0) + 'K'}</td>
                 <td>${p.beds}</td>
                 <td>${p.baths}</td>

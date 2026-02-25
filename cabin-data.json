@@ -19,12 +19,13 @@
       "beds": 3,
       "baths": 2,
       "sqft": 1404,
-      "yield": 25.0,
+      "yield": 25,
       "revenue": 40400,
       "occupancy": 56,
       "adr": 199,
       "dom": 170,
-      "airdnaId": "3yd-BMLSCA-41110762"
+      "airdnaId": "3yd-BMLSCA-41110762",
+      "areaScore": 72
     },
     {
       "address": "5717 Mono Court, Mariposa CA 95338",
@@ -38,7 +39,8 @@
       "occupancy": 63,
       "adr": 305,
       "dom": 215,
-      "airdnaId": "3yd-FARCA-636370"
+      "airdnaId": "3yd-FARCA-636370",
+      "areaScore": 60
     },
     {
       "address": "2823 State Hwy 49 S, Mariposa CA 95338",
@@ -52,7 +54,8 @@
       "occupancy": 58,
       "adr": 350,
       "dom": 187,
-      "airdnaId": "3yd-FARCA-635908"
+      "airdnaId": "3yd-FARCA-635908",
+      "areaScore": 60
     },
     {
       "address": "5552 Harris Cutoff Rd, Mariposa CA 95338",
@@ -66,7 +69,8 @@
       "occupancy": 59,
       "adr": 302,
       "dom": 223,
-      "airdnaId": "3yd-FARCA-634043"
+      "airdnaId": "3yd-FARCA-634043",
+      "areaScore": 60
     },
     {
       "address": "499 Shay Creek Rd, Markleeville CA 96120",
@@ -80,7 +84,8 @@
       "occupancy": 38,
       "adr": 244,
       "dom": 270,
-      "airdnaId": "3yd-NNRMLS-250050646"
+      "airdnaId": "3yd-NNRMLS-250050646",
+      "areaScore": 69
     },
     {
       "address": "20872 McKinley Way, Groveland CA 95321",
@@ -94,7 +99,8 @@
       "occupancy": 51,
       "adr": 279,
       "dom": 47,
-      "airdnaId": "3yd-BMLSCA-41120536"
+      "airdnaId": "3yd-BMLSCA-41120536",
+      "areaScore": 50
     },
     {
       "address": "674 Kirby Way, Angels Camp CA 95222",
@@ -108,7 +114,8 @@
       "occupancy": 52,
       "adr": 254,
       "dom": 312,
-      "airdnaId": "3yd-NEXTHOME-265470"
+      "airdnaId": "3yd-NEXTHOME-265470",
+      "areaScore": 78
     },
     {
       "address": "12087 Breckenridge Rd, Groveland CA 95321",
@@ -117,12 +124,13 @@
       "beds": 2,
       "baths": 3,
       "sqft": 1988,
-      "yield": 15.0,
+      "yield": 15,
       "revenue": 47900,
       "occupancy": 62,
       "adr": 213,
       "dom": 83,
-      "airdnaId": "3yd-BMLSCA-41118725"
+      "airdnaId": "3yd-BMLSCA-41118725",
+      "areaScore": 50
     },
     {
       "address": "19817 Via Redonda Rd, Sonora CA 95370",
@@ -136,7 +144,8 @@
       "occupancy": 41,
       "adr": 261,
       "dom": 101,
-      "airdnaId": "3yd-BMLSCA-41117604"
+      "airdnaId": "3yd-BMLSCA-41117604",
+      "areaScore": 62
     },
     {
       "address": "5840 Evergreen Lane, Mariposa CA 95338",
@@ -150,7 +159,8 @@
       "occupancy": 46,
       "adr": 357,
       "dom": 5,
-      "airdnaId": "3yd-FARCA-644204"
+      "airdnaId": "3yd-FARCA-644204",
+      "areaScore": 60
     },
     {
       "address": "21767 Longeway Rd, Sonora CA 95370",
@@ -164,7 +174,8 @@
       "occupancy": 41,
       "adr": 243,
       "dom": 170,
-      "airdnaId": "3yd-BMLSCA-41110756"
+      "airdnaId": "3yd-BMLSCA-41110756",
+      "areaScore": 62
     },
     {
       "address": "2811 E Westfall, Mariposa CA 95338",
@@ -178,7 +189,8 @@
       "occupancy": 64,
       "adr": 287,
       "dom": 25,
-      "airdnaId": "3yd-FARCA-643075"
+      "airdnaId": "3yd-FARCA-643075",
+      "areaScore": 60
     },
     {
       "address": "5909 Evergreen, Mariposa CA 95338",
@@ -192,7 +204,8 @@
       "occupancy": 48,
       "adr": 349,
       "dom": 44,
-      "airdnaId": "3yd-FARCA-642181"
+      "airdnaId": "3yd-FARCA-642181",
+      "areaScore": 60
     },
     {
       "address": "2403 Parmabelle Rd, Mariposa CA 95338",
@@ -206,7 +219,8 @@
       "occupancy": 60,
       "adr": 301,
       "dom": 111,
-      "airdnaId": "3yd-FARCA-639688"
+      "airdnaId": "3yd-FARCA-639688",
+      "areaScore": 60
     },
     {
       "address": "5621 Ponderosa Court, Mariposa CA 95338",
@@ -220,7 +234,8 @@
       "occupancy": 62,
       "adr": 310,
       "dom": 24,
-      "airdnaId": "3yd-FARCA-643164"
+      "airdnaId": "3yd-FARCA-643164",
+      "areaScore": 60
     },
     {
       "address": "1167 Silver Tip Lane, Fish Camp CA 93623",
@@ -234,7 +249,8 @@
       "occupancy": 42,
       "adr": 379,
       "dom": 12,
-      "airdnaId": "3yd-FARCA-643901"
+      "airdnaId": "3yd-FARCA-643901",
+      "areaScore": 69
     }
   ]
 }
