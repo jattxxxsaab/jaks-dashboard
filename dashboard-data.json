@@ -40,7 +40,8 @@
       "statusText": "Active",
       "body": "Watching for BTC to hit <span class='value-orange'>$77,000</span> \u2014 trigger to sell ETH.<br>Current: <span class='highlight'>$63,787</span> (needs +20.7%)",
       "schedule": "Every 15 min",
-      "lastRun": "Feb 24, 7:32 AM \u2014 $63,895, no alert"
+      "lastRun": "Feb 24, 7:32 AM",
+      "lastResult": "BTC at $63,895 \u2014 well below $77K. No alert needed."
     },
     {
       "icon": "\ud83c\udf7d\ufe0f",
@@ -49,7 +50,8 @@
       "statusText": "Watching",
       "body": "Looking for table at <span class='highlight'>Gymkhana Las Vegas (ARIA)</span><br>Dates: <span class='value-blue'>Mar 5 or 6</span>, party of 4, 7-9 PM<br>Will auto-book if found",
       "schedule": "5x daily (8AM, 11AM, 2PM, 5PM, 9PM)",
-      "lastRun": "Feb 24, 2:00 PM \u2014 no tables available"
+      "lastRun": "Feb 24, 5:00 PM",
+      "lastResult": "No tables available for Mar 5 or 6 (party of 4). Next online availability showing Mar 30."
     },
     {
       "icon": "\ud83c\udfce\ufe0f",
@@ -58,7 +60,8 @@
       "statusText": "Active",
       "body": "Searching for <span class='highlight'>1993-1995 Mazda RX-7 FD</span><br>Manual only, max <span class='value-orange'>$25K</span>, project cars OK<br>Checks AutoTrader, CarGurus, FB Marketplace",
       "schedule": "Daily at 10 AM",
-      "lastRun": "Feb 24, 10:00 AM"
+      "lastRun": "Feb 24, 10:00 AM",
+      "lastResult": "Search completed. Only messages Jimmy if matches found."
     },
     {
       "icon": "\u2708\ufe0f",
@@ -67,7 +70,8 @@
       "statusText": "Active",
       "body": "Tracking <span class='highlight'>SFO \u2194 London Heathrow</span><br>Dates: Jun 2-4 departures, Jun 16-17 returns<br>Nonstop + 1-stop options",
       "schedule": "Daily at 8 AM",
-      "lastRun": "Feb 24, 8:00 AM"
+      "lastRun": "Feb 24, 8:00 AM",
+      "lastResult": "Price check completed. Update sent to Jimmy via iMessage."
     },
     {
       "icon": "\ud83c\udfe0",
@@ -76,7 +80,8 @@
       "statusText": "Active",
       "body": "Monitoring <span class='highlight'>SF for-sale properties</span> on AirDNA<br>Target: 2+ bed, 2+ bath, \u2264$750K<br>Neighborhoods: South Beach, Alamo Square, Noe Valley, Marina, Daly City, Mission Bay<br>Currently <span class='value-orange'>0 matches</span> in target hoods at this price",
       "schedule": "Daily at 9 AM",
-      "lastRun": "Feb 24 \u2014 initial scrape"
+      "lastRun": "Feb 24 \u2014 initial scrape",
+      "lastResult": "21 properties scraped. 0 matches in target neighborhoods under $750K. Best options: 601 Van Ness $675K (Civic Center, 2/2, 9.1% yield), 134 Albatross $695K (Bayview, 4/3, 14% yield)."
     },
     {
       "icon": "\ud83d\udce7",
@@ -85,7 +90,8 @@
       "statusText": "Pending",
       "body": "Emails drafted to 3 brokers:<br>\u2022 TCS Insurance (22+ carriers)<br>\u2022 Avantika's Insurance (5.0\u2b50)<br>\u2022 Hashimi Insurance<br>Waiting for Jimmy to review/send",
       "schedule": "Manual",
-      "lastRun": ""
+      "lastRun": "",
+      "lastResult": "Draft emails created in jimmy@apexrealty.io Gmail. Awaiting Jimmy's review before sending."
     }
   ],
   "tasks": [
@@ -96,7 +102,8 @@
       "statusText": "Running",
       "body": "BTC, ETH, solar, weather (3 cities), Lakers, Eagles, financial/world/tech news<br>Delivered via iMessage",
       "schedule": "Daily at 7:30 AM PST",
-      "lastRun": "Feb 24, 7:30 AM \u2705 (delivery wrapper errored but message sent)"
+      "lastRun": "Feb 24, 7:30 AM",
+      "lastResult": "\u2705 Brief delivered via iMessage. BTC $63,787 (\u25bc3.2%), ETH $1,844 (\u25bc3.2%), Solar 25.1 kWh. Delivery wrapper errored but message sent successfully."
     },
     {
       "icon": "\ud83d\udccb",
@@ -105,7 +112,8 @@
       "statusText": "Scheduled",
       "body": "Auto-fill Parminder's timesheet on IHSS portal<br>Provider: Parminder Bhullar \u2192 Recipient: Sanjit Bhullar<br>Saves but does NOT submit \u2014 confirms with Jimmy first",
       "schedule": "15th & last day of month, 9:00 AM",
-      "lastRun": "Feb 15 \u2705"
+      "lastRun": "Feb 15, 9:00 AM",
+      "lastResult": "\u2705 Timesheet filled for Feb 1-15. All workweeks saved. Total hours confirmed with Jimmy, then submitted."
     },
     {
       "icon": "\u2705",
@@ -114,7 +122,8 @@
       "statusText": "Scheduled",
       "body": "Auto-approve as recipient Sanjit Bhullar<br>Runs 10 min after fill job",
       "schedule": "15th & last day of month, 9:10 AM",
-      "lastRun": "Feb 15 \u2705"
+      "lastRun": "Feb 15, 9:10 AM",
+      "lastResult": "\u2705 Timesheet approved as Sanjit Bhullar. Confirmation sent to Jimmy."
     },
     {
       "icon": "\ud83d\udcbe",
@@ -123,7 +132,8 @@
       "statusText": "Running",
       "body": "Backs up: workspace, openclaw.json, cron-jobs.json<br>Location: ~/Documents/openclaw_backup/",
       "schedule": "Sundays at 3:00 AM",
-      "lastRun": "Feb 23 \u2705"
+      "lastRun": "Feb 23, 3:00 AM",
+      "lastResult": "\u2705 Backup completed successfully."
     },
     {
       "icon": "\ud83c\udfb0",
@@ -132,7 +142,8 @@
       "statusText": "Pending",
       "body": "Reminder to plan Vegas trip <span class='value-blue'>Mar 5-7</span><br>Pack, hotel, flights, reservations",
       "schedule": "One-shot: Feb 26",
-      "lastRun": ""
+      "lastRun": "",
+      "lastResult": "Not yet fired. Scheduled for Feb 26."
     }
   ],
   "activityLog": [
