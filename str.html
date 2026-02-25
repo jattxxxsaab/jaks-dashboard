@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏠 STR Investment Tracker</title>
+    <title>STR Investment Tracker</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; }
@@ -13,33 +13,42 @@
         .back-link { padding: 12px 32px; }
         .back-link a { color: #8b949e; text-decoration: none; font-size: 13px; }
         .back-link a:hover { color: #58a6ff; }
-        .markets { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 24px 32px; }
-        .market-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
-        .market-card:hover { border-color: #58a6ff; transform: translateY(-2px); }
-        .market-card a { text-decoration: none; color: inherit; display: block; }
-        .card-header { padding: 20px 20px 12px; }
-        .card-header .icon { font-size: 32px; margin-bottom: 8px; }
-        .card-header h2 { font-size: 20px; font-weight: 700; color: #fff; }
-        .card-header .location { color: #8b949e; font-size: 13px; margin-top: 4px; }
-        .card-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #30363d; }
-        .card-stat { background: #161b22; padding: 12px; text-align: center; }
-        .card-stat .label { font-size: 10px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
-        .card-stat .val { font-size: 18px; font-weight: 700; margin-top: 2px; }
-        .card-stat .val.green { color: #3fb950; }
-        .card-stat .val.blue { color: #58a6ff; }
-        .card-stat .val.orange { color: #d29922; }
-        .card-footer { padding: 14px 20px; border-top: 1px solid #30363d; display: flex; justify-content: space-between; align-items: center; }
-        .card-footer .view { color: #58a6ff; font-size: 13px; font-weight: 600; }
-        .card-footer .updated { color: #484f58; font-size: 11px; }
-        .summary { padding: 0 32px 32px; }
-        .summary h3 { font-size: 16px; color: #8b949e; margin-bottom: 12px; font-weight: 500; }
-        .summary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
-        .sum-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; }
-        .sum-card .label { font-size: 11px; color: #8b949e; text-transform: uppercase; }
-        .sum-card .val { font-size: 24px; font-weight: 700; color: #fff; margin-top: 4px; }
+        .tab-bar { display: flex; gap: 0; padding: 0 32px; border-bottom: 1px solid #30363d; background: #161b22; }
+        .tab { padding: 14px 24px; font-size: 14px; font-weight: 600; color: #8b949e; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; text-decoration: none; }
+        .tab:hover { color: #e1e4e8; background: #1c2128; }
+        .tab.active { color: #58a6ff; border-bottom-color: #58a6ff; }
+        .market-panel { display: none; }
+        .market-panel.active { display: block; }
+        .stats-bar { display: flex; gap: 16px; padding: 16px 32px; background: #0f1117; border-bottom: 1px solid #21262d; flex-wrap: wrap; }
+        .stat-card { background: #1c2128; border: 1px solid #30363d; border-radius: 8px; padding: 12px 16px; min-width: 130px; }
+        .stat-card .label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+        .stat-card .value { font-size: 20px; font-weight: 700; color: #fff; margin-top: 2px; }
+        .stat-card .value.green { color: #3fb950; }
+        .stat-card .value.blue { color: #58a6ff; }
+        .stat-card .value.orange { color: #d29922; }
+        .criteria-banner { background: #1c2128; border: 1px solid #30363d; border-left: 3px solid #58a6ff; margin: 16px 32px; padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 13px; color: #8b949e; }
+        .criteria-banner strong { color: #e1e4e8; }
+        .criteria-banner.green { border-left-color: #3fb950; }
+        .criteria-banner.purple { border-left-color: #bc8cff; }
+        .filters { padding: 16px 32px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+        .filters label { font-size: 13px; color: #8b949e; }
+        .filters select { background: #1c2128; border: 1px solid #30363d; color: #e1e4e8; padding: 6px 10px; border-radius: 6px; font-size: 13px; }
+        .table-container { padding: 0 32px 32px; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        th { background: #1c2128; color: #8b949e; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; padding: 10px 12px; text-align: left; cursor: pointer; white-space: nowrap; border-bottom: 2px solid #30363d; position: sticky; top: 0; }
+        th:hover { color: #58a6ff; }
+        td { padding: 10px 12px; border-bottom: 1px solid #21262d; font-size: 13px; white-space: nowrap; }
+        tr:hover { background: #1c2128; }
+        .yield-high { color: #3fb950; font-weight: 700; }
+        .yield-med { color: #d29922; font-weight: 700; }
+        .yield-low { color: #f85149; font-weight: 700; }
+        .price { font-weight: 600; color: #fff; }
+        .revenue { color: #3fb950; }
+        .area-badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; background: #1c2128; color: #8b949e; }
+        .no-results { text-align: center; padding: 60px; color: #8b949e; }
         @media (max-width: 768px) {
-            .header, .back-link, .markets, .summary { padding-left: 16px; padding-right: 16px; }
-            .markets { grid-template-columns: 1fr; }
+            .header, .back-link, .tab-bar, .stats-bar, .filters, .table-container, .criteria-banner { padding-left: 16px; padding-right: 16px; }
+            .tab { padding: 12px 16px; font-size: 13px; }
         }
     </style>
 </head>
@@ -48,81 +57,154 @@
         <h1>🏠 STR Investment Tracker</h1>
         <div class="subtitle">Short-term rental for-sale properties across target markets — powered by AirDNA</div>
     </div>
-    <div class="back-link">
-        <a href="dashboard.html">← Back to Jaks Dashboard</a>
+    <div class="back-link"><a href="dashboard.html">← Back to Jaks Dashboard</a></div>
+
+    <div class="tab-bar">
+        <a class="tab active" onclick="switchTab('sf',this)">🌉 San Francisco</a>
+        <a class="tab" onclick="switchTab('cabin',this)">🏔️ Sierra Cabin</a>
+        <a class="tab" onclick="switchTab('sc',this)">🏖️ Santa Cruz</a>
     </div>
 
-    <div class="markets" id="markets"></div>
+    <div id="panel-sf" class="market-panel active">
+        <div class="criteria-banner"><strong>Search Criteria:</strong> SF market · 2+ beds · 2+ baths · ≤$750K · Target: South Beach, Alamo Square, Noe Valley, Marina, Daly City, Mission Bay</div>
+        <div class="stats-bar" id="stats-sf"></div>
+        <div class="filters">
+            <label>Sort:</label><select id="sort-sf" onchange="renderTable('sf')"><option value="yield-desc">Yield ↓</option><option value="price-asc">Price ↑</option><option value="price-desc">Price ↓</option><option value="revenue-desc">Revenue ↓</option><option value="occupancy-desc">Occupancy ↓</option></select>
+            <label>Max Price:</label><select id="maxprice-sf" onchange="renderTable('sf')"><option value="750000">$750K</option><option value="1000000">$1M</option><option value="99999999">All</option></select>
+        </div>
+        <div class="table-container"><table><thead><tr><th>Address</th><th>Area</th><th>Score</th><th>Price</th><th>Bed</th><th>Bath</th><th>Sqft</th><th>Yield</th><th>Revenue</th><th>Occ</th><th>ADR</th><th>DOM</th></tr></thead><tbody id="tbody-sf"></tbody></table><div class="no-results" id="noresults-sf" style="display:none">No matching properties</div></div>
+    </div>
 
-    <div class="summary">
-        <h3>📊 Combined Portfolio Summary</h3>
-        <div class="summary-grid" id="summaryGrid"></div>
+    <div id="panel-cabin" class="market-panel">
+        <div class="criteria-banner green"><strong>Search Criteria:</strong> Northern Sierra Mtns · ≤$600K · Long Barn, Pinecrest, Sonora, Tuolumne, Groveland, Mariposa</div>
+        <div class="stats-bar" id="stats-cabin"></div>
+        <div class="filters">
+            <label>Sort:</label><select id="sort-cabin" onchange="renderTable('cabin')"><option value="yield-desc">Yield ↓</option><option value="price-asc">Price ↑</option><option value="price-desc">Price ↓</option><option value="revenue-desc">Revenue ↓</option><option value="occupancy-desc">Occupancy ↓</option></select>
+            <label>Max Price:</label><select id="maxprice-cabin" onchange="renderTable('cabin')"><option value="600000">$600K</option><option value="400000">$400K</option><option value="99999999">All</option></select>
+        </div>
+        <div class="table-container"><table><thead><tr><th>Address</th><th>Area</th><th>Score</th><th>Price</th><th>Bed</th><th>Bath</th><th>Sqft</th><th>Yield</th><th>Revenue</th><th>Occ</th><th>ADR</th><th>DOM</th></tr></thead><tbody id="tbody-cabin"></tbody></table><div class="no-results" id="noresults-cabin" style="display:none">No matching properties</div></div>
+    </div>
+
+    <div id="panel-sc" class="market-panel">
+        <div class="criteria-banner purple"><strong>Search Criteria:</strong> Santa Cruz market · Capitola, Aptos, Santa Cruz, Watsonville, Felton</div>
+        <div class="stats-bar" id="stats-sc"></div>
+        <div class="filters">
+            <label>Sort:</label><select id="sort-sc" onchange="renderTable('sc')"><option value="yield-desc">Yield ↓</option><option value="price-asc">Price ↑</option><option value="price-desc">Price ↓</option><option value="revenue-desc">Revenue ↓</option><option value="occupancy-desc">Occupancy ↓</option></select>
+            <label>Max Price:</label><select id="maxprice-sc" onchange="renderTable('sc')"><option value="99999999">All</option><option value="600000">$600K</option><option value="1000000">$1M</option></select>
+        </div>
+        <div class="table-container"><table><thead><tr><th>Address</th><th>Area</th><th>Score</th><th>Price</th><th>Bed</th><th>Bath</th><th>Sqft</th><th>Yield</th><th>Revenue</th><th>Occ</th><th>ADR</th><th>DOM</th></tr></thead><tbody id="tbody-sc"></tbody></table><div class="no-results" id="noresults-sc" style="display:none">No matching properties</div></div>
     </div>
 
     <script>
-    const MARKETS = [
-        { name: 'San Francisco', icon: '🌉', location: 'SF Bay Area, California', file: 'data.json', page: 'index.html', color: '#58a6ff' },
-        { name: 'Sierra Cabin', icon: '🏔️', location: 'Long Barn / Pinecrest / N. Sierra Mtns', file: 'cabin-data.json', page: 'cabin.html', color: '#3fb950' },
-        { name: 'Santa Cruz', icon: '🏖️', location: 'Capitola / Aptos / Santa Cruz', file: 'santacruz-data.json', page: 'santacruz.html', color: '#bc8cff' }
-    ];
+    var DATA = { sf: null, cabin: null, sc: null };
+    var FILES = { sf: 'data.json', cabin: 'cabin-data.json', sc: 'santacruz-data.json' };
 
-    let allData = [];
-
-    async function load() {
-        const results = await Promise.all(MARKETS.map(async m => {
-            try {
-                const r = await fetch(m.file + '?' + Date.now());
-                return { ...m, data: await r.json() };
-            } catch(e) { return { ...m, data: { properties: [] } }; }
-        }));
-        allData = results;
-        render();
+    function zillow(addr) {
+        return 'https://www.zillow.com/homes/' + addr.replace(/[#,\.]/g, '').replace(/\s+/g, '-') + '_rb/';
     }
 
-    function render() {
-        const container = document.getElementById('markets');
-        let totalProps = 0, totalValue = 0, avgYield = 0, yieldCount = 0;
+    function switchTab(id, el) {
+        document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelectorAll('.market-panel').forEach(function(p) { p.classList.remove('active'); });
+        el.classList.add('active');
+        document.getElementById('panel-' + id).classList.add('active');
+    }
 
-        container.innerHTML = allData.map(m => {
-            const props = m.data.properties || [];
-            totalProps += props.length;
-            const avgP = props.length ? Math.round(props.reduce((s,p) => s + p.price, 0) / props.length / 1000) : 0;
-            totalValue += props.reduce((s,p) => s + p.price, 0);
-            const avgY = props.length ? (props.reduce((s,p) => s + (p.yield||0), 0) / props.length) : 0;
-            if (props.length) { avgYield += avgY * props.length; yieldCount += props.length; }
-            const avgR = props.length ? (props.reduce((s,p) => s + (p.revenue||0), 0) / props.length / 1000).toFixed(1) : 0;
-            const updated = m.data.lastUpdated ? new Date(m.data.lastUpdated).toLocaleDateString() : '--';
+    function scoreColor(s) {
+        if (s >= 70) return '#3fb950';
+        if (s >= 50) return '#d29922';
+        return '#f85149';
+    }
 
-            return \`<div class="market-card">
-                <a href="\${m.page}">
-                    <div class="card-header">
-                        <div class="icon">\${m.icon}</div>
-                        <h2>\${m.name}</h2>
-                        <div class="location">\${m.location}</div>
-                    </div>
-                    <div class="card-stats">
-                        <div class="card-stat"><div class="label">Properties</div><div class="val orange">\${props.length}</div></div>
-                        <div class="card-stat"><div class="label">Avg Yield</div><div class="val green">\${avgY.toFixed(1)}%</div></div>
-                        <div class="card-stat"><div class="label">Avg Price</div><div class="val blue">$\${avgP}K</div></div>
-                    </div>
-                    <div class="card-footer">
-                        <span class="view">View Properties →</span>
-                        <span class="updated">Updated \${updated}</span>
-                    </div>
-                </a>
-            </div>\`;
+    function yieldClass(y, market) {
+        var high = market === 'cabin' ? 15 : 10;
+        var med = market === 'cabin' ? 10 : 7;
+        if (y >= high) return 'yield-high';
+        if (y >= med) return 'yield-med';
+        return 'yield-low';
+    }
+
+    function fmtPrice(p) {
+        if (p >= 1000000) return '$' + (p/1000000).toFixed(2) + 'M';
+        return '$' + Math.round(p/1000) + 'K';
+    }
+
+    function renderStats(key) {
+        var d = DATA[key];
+        if (!d) return;
+        var props = d.properties || [];
+        var n = props.length;
+        var avgY = n ? (props.reduce(function(s,p){return s+(p.yield||0);},0)/n).toFixed(1) : '--';
+        var avgP = n ? '$' + Math.round(props.reduce(function(s,p){return s+p.price;},0)/n/1000) + 'K' : '--';
+        var avgR = n ? '$' + (props.reduce(function(s,p){return s+(p.revenue||0);},0)/n/1000).toFixed(1) + 'K' : '--';
+        var avgO = n ? Math.round(props.reduce(function(s,p){return s+(p.occupancy||0);},0)/n) + '%' : '--';
+        var updated = d.lastUpdated ? new Date(d.lastUpdated).toLocaleString() : '--';
+        document.getElementById('stats-' + key).innerHTML =
+            '<div class="stat-card"><div class="label">Properties</div><div class="value orange">' + n + '</div></div>' +
+            '<div class="stat-card"><div class="label">Avg Yield</div><div class="value green">' + avgY + '%</div></div>' +
+            '<div class="stat-card"><div class="label">Avg Price</div><div class="value blue">' + avgP + '</div></div>' +
+            '<div class="stat-card"><div class="label">Avg Revenue</div><div class="value green">' + avgR + '</div></div>' +
+            '<div class="stat-card"><div class="label">Avg Occupancy</div><div class="value">' + avgO + '</div></div>' +
+            '<div class="stat-card"><div class="label">Updated</div><div class="value" style="font-size:12px;color:#8b949e">' + updated + '</div></div>';
+    }
+
+    function renderTable(key) {
+        var d = DATA[key];
+        if (!d) return;
+        var maxP = parseInt(document.getElementById('maxprice-' + key).value);
+        var sortVal = document.getElementById('sort-' + key).value;
+        var parts = sortVal.split('-');
+        var field = parts[0];
+        var dir = parts[1];
+
+        var filtered = (d.properties || []).filter(function(p) { return p.price <= maxP; });
+        filtered.sort(function(a, b) {
+            var va = a[field] == null ? (dir === 'asc' ? Infinity : -Infinity) : a[field];
+            var vb = b[field] == null ? (dir === 'asc' ? Infinity : -Infinity) : b[field];
+            return dir === 'asc' ? va - vb : vb - va;
+        });
+
+        var tbody = document.getElementById('tbody-' + key);
+        var noRes = document.getElementById('noresults-' + key);
+        if (!filtered.length) { tbody.innerHTML = ''; noRes.style.display = 'block'; return; }
+        noRes.style.display = 'none';
+
+        tbody.innerHTML = filtered.map(function(p) {
+            var score = p.hoodScore || p.areaScore || '--';
+            var sc = typeof score === 'number' ? scoreColor(score) : '#8b949e';
+            var area = p.neighborhood || p.area || '--';
+            var yc = yieldClass(p.yield || 0, key);
+            return '<tr>' +
+                '<td><a href="' + zillow(p.address) + '" target="_blank" style="color:#58a6ff;text-decoration:none;">' + p.address + '</a></td>' +
+                '<td><span class="area-badge">' + area + '</span></td>' +
+                '<td style="color:' + sc + ';font-weight:700">' + score + '</td>' +
+                '<td class="price">' + fmtPrice(p.price) + '</td>' +
+                '<td>' + p.beds + '</td>' +
+                '<td>' + p.baths + '</td>' +
+                '<td>' + (p.sqft ? p.sqft.toLocaleString() : '--') + '</td>' +
+                '<td class="' + yc + '">' + (p.yield ? p.yield.toFixed(1) + '%' : '--') + '</td>' +
+                '<td class="revenue">' + (p.revenue ? '$' + (p.revenue/1000).toFixed(1) + 'K' : '--') + '</td>' +
+                '<td>' + (p.occupancy ? p.occupancy + '%' : '--') + '</td>' +
+                '<td>' + (p.adr ? '$' + p.adr : '--') + '</td>' +
+                '<td>' + (p.dom || '--') + '</td>' +
+                '</tr>';
         }).join('');
-
-        const overallYield = yieldCount ? (avgYield / yieldCount).toFixed(1) : '--';
-        document.getElementById('summaryGrid').innerHTML = \`
-            <div class="sum-card"><div class="label">Total Properties</div><div class="val" style="color:#d29922">\${totalProps}</div></div>
-            <div class="sum-card"><div class="label">Total Value Tracked</div><div class="val" style="color:#58a6ff">$\${(totalValue/1000000).toFixed(1)}M</div></div>
-            <div class="sum-card"><div class="label">Avg Yield (All)</div><div class="val" style="color:#3fb950">\${overallYield}%</div></div>
-            <div class="sum-card"><div class="label">Markets Tracked</div><div class="val">\${allData.length}</div></div>
-        \`;
     }
 
-    load();
+    async function loadAll() {
+        var keys = ['sf', 'cabin', 'sc'];
+        for (var i = 0; i < keys.length; i++) {
+            var k = keys[i];
+            try {
+                var r = await fetch(FILES[k] + '?' + Date.now());
+                DATA[k] = await r.json();
+            } catch(e) { DATA[k] = { properties: [] }; }
+            renderStats(k);
+            renderTable(k);
+        }
+    }
+
+    loadAll();
     </script>
 </body>
 </html>
