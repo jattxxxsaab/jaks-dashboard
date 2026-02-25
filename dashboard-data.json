@@ -186,5 +186,75 @@
       "source": "Backup",
       "message": "Weekly backup completed successfully."
     }
-  ]
+  ],
+  "dailyBrief": {
+    "date": "Tuesday, February 24, 2026",
+    "sections": [
+      {
+        "icon": "\ud83d\udcb0",
+        "label": "Crypto",
+        "items": [
+          "BTC: <span class='down'>$63,787 (\u25bc 3.2%)</span>",
+          "ETH: <span class='down'>$1,844 (\u25bc 3.2%)</span>"
+        ]
+      },
+      {
+        "icon": "\u26a1",
+        "label": "Solar",
+        "items": [
+          "Yesterday: <span class='up'>25.1 kWh</span> | Peak: 4,827W"
+        ]
+      },
+      {
+        "icon": "\ud83c\udf26\ufe0f",
+        "label": "Weather",
+        "items": [
+          "Mountain House: 56-69\u00b0F, drizzle",
+          "Long Barn: 47-54\u00b0F, light rain",
+          "San Francisco: 53-65\u00b0F, light rain"
+        ]
+      },
+      {
+        "icon": "\ud83c\udfc0",
+        "label": "Lakers",
+        "items": [
+          "34-22, 1st in Pacific \u2014 L1, lost to Celtics"
+        ]
+      },
+      {
+        "icon": "\ud83c\udfc8",
+        "label": "Eagles",
+        "items": [
+          "Offseason: Sirianni \"can't guarantee\" A.J. Brown returns; tush push not expected to be banned"
+        ]
+      },
+      {
+        "icon": "\ud83d\udcc8",
+        "label": "Financial News",
+        "items": [
+          "Stocks sell off as Trump's new 10% tariffs kick in, Dow dropped 800+ pts Monday <span class='source'>(WSJ)</span>",
+          "Investors shrug off latest tariff announcement in classic \"TACO\" pattern <span class='source'>(CNBC)</span>",
+          "S&P up 0.6% today, Nasdaq +0.9% in early recovery <span class='source'>(Google Finance)</span>"
+        ]
+      },
+      {
+        "icon": "\ud83c\udf0d",
+        "label": "World News",
+        "items": [
+          "Western states rally behind Ukraine at UN on 4th anniversary of Russian invasion <span class='source'>(Reuters)</span>",
+          "France's Glucksmann says US under Trump \"no longer an ally\" of Europe <span class='source'>(Reuters)</span>",
+          "6.5M face acute hunger in Somalia as UN food aid could halt by April <span class='source'>(Reuters)</span>"
+        ]
+      },
+      {
+        "icon": "\ud83d\udda5\ufe0f",
+        "label": "Data Center / AI",
+        "items": [
+          "Amazon planning large-scale DC campus next to Comanche nuclear plant in Texas <span class='source'>(DCD)</span>",
+          "Meta & AMD sign multi-year deal for 6GW GPU deployment <span class='source'>(DCD)</span>",
+          "SambaNova unveils SN50 AI chip with Intel partnership and $350M raise <span class='source'>(DCD)</span>"
+        ]
+      }
+    ]
+  }
 }

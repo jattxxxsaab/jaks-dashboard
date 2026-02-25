@@ -59,6 +59,19 @@
         .nav-link { background: #1c2128; border: 1px solid #30363d; color: #58a6ff; text-decoration: none; padding: 6px 14px; border-radius: 6px; font-size: 13px; transition: all 0.2s; }
         .nav-link:hover { background: #30363d; color: #fff; }
         
+        .daily-brief { background: #161b22; border: 1px solid #30363d; border-left: 4px solid #58a6ff; border-radius: 0 10px 10px 0; padding: 16px 20px; margin-bottom: 24px; }
+        .daily-brief .brief-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .daily-brief .brief-title { font-size: 16px; font-weight: 700; color: #fff; }
+        .daily-brief .brief-date { font-size: 12px; color: #58a6ff; }
+        .daily-brief .brief-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+        .brief-section { }
+        .brief-section .brief-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #58a6ff; font-weight: 600; margin-bottom: 4px; }
+        .brief-section .brief-items { font-size: 13px; color: #c9d1d9; line-height: 1.6; }
+        .brief-section .brief-items .up { color: #3fb950; }
+        .brief-section .brief-items .down { color: #f85149; }
+        .brief-section .brief-items .neutral { color: #8b949e; }
+        .brief-section .brief-items .source { color: #484f58; font-size: 11px; }
+        
         @media (max-width: 768px) {
             .container { padding: 12px; }
             .cards { grid-template-columns: 1fr; }
@@ -80,6 +93,8 @@
             <a href="dashboard.html" class="nav-link">📊 Dashboard</a>
         </div>
 
+        <div class="daily-brief" id="dailyBrief"></div>
+        
         <div class="quick-stats" id="quickStats"></div>
         
         <div class="section">
@@ -123,6 +138,27 @@
         document.getElementById('lastUpdated').textContent = DASHBOARD.lastUpdated 
             ? `Updated: ${new Date(DASHBOARD.lastUpdated).toLocaleString()}`
             : '';
+
+        // Daily Brief
+        const brief = DASHBOARD.dailyBrief || {};
+        const briefEl = document.getElementById('dailyBrief');
+        if (brief.date) {
+            const sections = (brief.sections || []).map(s => `
+                <div class="brief-section">
+                    <div class="brief-label">${s.icon} ${s.label}</div>
+                    <div class="brief-items">${s.items.join('<br>')}</div>
+                </div>
+            `).join('');
+            briefEl.innerHTML = `
+                <div class="brief-header">
+                    <div class="brief-title">☀️ Daily Brief</div>
+                    <div class="brief-date">${brief.date}</div>
+                </div>
+                <div class="brief-grid">${sections}</div>
+            `;
+        } else {
+            briefEl.innerHTML = '<div style="color:#484f58;text-align:center;padding:12px;">No daily brief yet today</div>';
+        }
 
         // Quick stats
         const qs = DASHBOARD.quickStats || {};
