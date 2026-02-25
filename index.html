@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SF STR Property Tracker</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; }
+        .header { background: linear-gradient(135deg, #1a1f2e 0%, #2d1f3d 100%); padding: 24px 32px; border-bottom: 1px solid #30363d; }
+        .header h1 { font-size: 24px; font-weight: 700; color: #fff; }
+        .header .subtitle { color: #8b949e; font-size: 14px; margin-top: 4px; }
+        .header .updated { color: #58a6ff; font-size: 12px; margin-top: 8px; }
+        .stats-bar { display: flex; gap: 16px; padding: 16px 32px; background: #161b22; border-bottom: 1px solid #30363d; flex-wrap: wrap; }
+        .stat-card { background: #1c2128; border: 1px solid #30363d; border-radius: 8px; padding: 12px 16px; min-width: 140px; }
+        .stat-card .label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+        .stat-card .value { font-size: 20px; font-weight: 700; color: #fff; margin-top: 2px; }
+        .stat-card .value.green { color: #3fb950; }
+        .stat-card .value.blue { color: #58a6ff; }
+        .stat-card .value.orange { color: #d29922; }
+        .filters { padding: 16px 32px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+        .filters label { font-size: 13px; color: #8b949e; }
+        .filters select, .filters input { background: #1c2128; border: 1px solid #30363d; color: #e1e4e8; padding: 6px 10px; border-radius: 6px; font-size: 13px; }
+        .filters select:focus, .filters input:focus { outline: none; border-color: #58a6ff; }
+        .table-container { padding: 0 32px 32px; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        th { background: #1c2128; color: #8b949e; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; padding: 10px 12px; text-align: left; cursor: pointer; user-select: none; white-space: nowrap; border-bottom: 2px solid #30363d; position: sticky; top: 0; }
+        th:hover { color: #58a6ff; }
+        th.sorted-asc::after { content: ' ▲'; color: #58a6ff; }
+        th.sorted-desc::after { content: ' ▼'; color: #58a6ff; }
+        td { padding: 10px 12px; border-bottom: 1px solid #21262d; font-size: 13px; white-space: nowrap; }
+        tr:hover { background: #1c2128; }
+        .neighborhood-badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+        .score-high { background: #1b4332; color: #3fb950; }
+        .score-med { background: #3d2e00; color: #d29922; }
+        .score-low { background: #3d1e1e; color: #f85149; }
+        .yield-cell { font-weight: 700; }
+        .yield-high { color: #3fb950; }
+        .yield-med { color: #d29922; }
+        .yield-low { color: #f85149; }
+        .price { font-weight: 600; color: #fff; }
+        .revenue { color: #3fb950; }
+        .no-results { text-align: center; padding: 60px; color: #8b949e; }
+        .no-results h3 { font-size: 18px; margin-bottom: 8px; color: #e1e4e8; }
+        .market-overview { padding: 16px 32px; }
+        .market-overview h2 { font-size: 16px; margin-bottom: 12px; color: #fff; }
+        .neighborhoods-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+        .hood-card { background: #1c2128; border: 1px solid #30363d; border-radius: 8px; padding: 12px; }
+        .hood-card .name { font-weight: 600; font-size: 14px; color: #fff; }
+        .hood-card .score { font-size: 20px; font-weight: 700; margin: 4px 0; }
+        .hood-card .details { font-size: 12px; color: #8b949e; }
+        .criteria-banner { background: #1c2128; border: 1px solid #30363d; border-left: 3px solid #58a6ff; margin: 16px 32px; padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 13px; color: #8b949e; }
+        .criteria-banner strong { color: #e1e4e8; }
+        @media (max-width: 768px) {
+            .header, .stats-bar, .filters, .table-container, .market-overview, .criteria-banner { padding-left: 16px; padding-right: 16px; }
+            .stat-card { min-width: 100px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏠 SF Short-Term Rental Property Tracker</h1>
+        <div class="subtitle">For-sale properties with STR earning potential — powered by AirDNA</div>
+        <div class="updated" id="lastUpdated">Loading...</div>
+    </div>
+
+    <div class="criteria-banner">
+        <strong>Search Criteria:</strong> San Francisco market · 2+ beds · 2+ baths · ≤$750K · 
+        Target neighborhoods: South Beach, Alamo Square, Noe Valley, Marina, Daly City, Mission Bay
+        <br><strong>Expanded view:</strong> Also showing nearby high-score neighborhoods for comparison
+    </div>
+
+    <div class="stats-bar" id="statsBar"></div>
+
+    <div class="market-overview">
+        <h2>📊 Target Neighborhood STR Performance</h2>
+        <div class="neighborhoods-grid" id="neighborhoodsGrid"></div>
+    </div>
+
+    <div class="filters">
+        <label>Sort by:</label>
+        <select id="sortBy" onchange="renderTable()">
+            <option value="yield-desc">Yield (High→Low)</option>
+            <option value="yield-asc">Yield (Low→High)</option>
+            <option value="price-asc">Price (Low→High)</option>
+            <option value="price-desc">Price (High→Low)</option>
+            <option value="revenue-desc">Revenue (High→Low)</option>
+            <option value="occupancy-desc">Occupancy (High→Low)</option>
+            <option value="adr-desc">ADR (High→Low)</option>
+            <option value="dom-asc">Days on Market (Low→High)</option>
+        </select>
+        <label>Max Price:</label>
+        <select id="maxPrice" onchange="renderTable()">
+            <option value="750000">$750K</option>
+            <option value="1000000">$1M</option>
+            <option value="1500000">$1.5M</option>
+            <option value="99999999">All</option>
+        </select>
+        <label>Min Beds:</label>
+        <select id="minBeds" onchange="renderTable()">
+            <option value="2">2+</option>
+            <option value="1">1+</option>
+            <option value="3">3+</option>
+            <option value="0">Any</option>
+        </select>
+        <label>Min Baths:</label>
+        <select id="minBaths" onchange="renderTable()">
+            <option value="2">2+</option>
+            <option value="1">1+</option>
+            <option value="0">Any</option>
+        </select>
+        <label>Neighborhood:</label>
+        <select id="hoodFilter" onchange="renderTable()">
+            <option value="all">All</option>
+            <option value="target">Target Only</option>
+        </select>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Address</th>
+                    <th>Neighborhood</th>
+                    <th>Score</th>
+                    <th>Price</th>
+                    <th>Bed</th>
+                    <th>Bath</th>
+                    <th>Sqft</th>
+                    <th>Yield</th>
+                    <th>Revenue</th>
+                    <th>Occupancy</th>
+                    <th>ADR</th>
+                    <th>DOM</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+        <div class="no-results" id="noResults" style="display:none;">
+            <h3>No properties match your filters</h3>
+            <p>Try expanding your price range or reducing bed/bath requirements</p>
+        </div>
+    </div>
+
+    <script>
+    let DATA = { properties: [], neighborhoods: [], market: {}, lastUpdated: null };
+
+    async function loadData() {
+        try {
+            const resp = await fetch('data.json?' + Date.now());
+            DATA = await resp.json();
+        } catch (e) {
+            console.error('Failed to load data:', e);
+        }
+        render();
+    }
+
+    function render() {
+        document.getElementById('lastUpdated').textContent = DATA.lastUpdated 
+            ? `Last updated: ${new Date(DATA.lastUpdated).toLocaleString()}`
+            : 'No data yet';
+
+        // Stats bar
+        const m = DATA.market || {};
+        document.getElementById('statsBar').innerHTML = `
+            <div class="stat-card"><div class="label">Market Score</div><div class="value blue">${m.score || '--'}</div></div>
+            <div class="stat-card"><div class="label">Median Revenue</div><div class="value green">${m.medianRevenue || '--'}</div></div>
+            <div class="stat-card"><div class="label">Avg Daily Rate</div><div class="value">${m.adr || '--'}</div></div>
+            <div class="stat-card"><div class="label">Occupancy</div><div class="value">${m.occupancy || '--'}</div></div>
+            <div class="stat-card"><div class="label">Active Listings</div><div class="value">${m.activeListings || '--'}</div></div>
+            <div class="stat-card"><div class="label">Properties Tracked</div><div class="value orange">${DATA.properties.length}</div></div>
+        `;
+
+        // Neighborhoods grid
+        const targetHoods = ['South Beach', 'Alamo Square', 'Noe Valley', 'Marina', 'Daly City', 'Mission Bay'];
+        const grid = document.getElementById('neighborhoodsGrid');
+        grid.innerHTML = (DATA.neighborhoods || [])
+            .filter(n => targetHoods.includes(n.name))
+            .sort((a, b) => b.score - a.score)
+            .map(n => {
+                const scoreClass = n.score >= 90 ? 'green' : n.score >= 70 ? 'orange' : '';
+                return `<div class="hood-card">
+                    <div class="name">${n.name}</div>
+                    <div class="score" style="color:${n.score >= 90 ? '#3fb950' : n.score >= 70 ? '#d29922' : '#f85149'}">${n.score}</div>
+                    <div class="details">Rev: ${n.revenue} · Occ: ${n.occupancy} · ADR: ${n.adr}</div>
+                </div>`;
+            }).join('');
+
+        renderTable();
+    }
+
+    function renderTable() {
+        const maxPrice = parseInt(document.getElementById('maxPrice').value);
+        const minBeds = parseInt(document.getElementById('minBeds').value);
+        const minBaths = parseInt(document.getElementById('minBaths').value);
+        const hoodFilter = document.getElementById('hoodFilter').value;
+        const sortBy = document.getElementById('sortBy').value;
+        const targetHoods = ['South Beach', 'Alamo Square', 'Noe Valley', 'Marina', 'Daly City', 'Mission Bay',
+                             'Potrero Hill', 'SoMa', 'Mission District', 'Excelsior', 'The Castro', 'Haight-Ashbury',
+                             'Mission Bay', 'Outer Sunset', 'Inner Sunset', 'Pacific Heights', 'Nob Hill'];
+        const primaryTarget = ['South Beach', 'Alamo Square', 'Noe Valley', 'Marina', 'Daly City', 'Mission Bay'];
+
+        let filtered = DATA.properties.filter(p => {
+            if (p.price > maxPrice) return false;
+            if (p.beds < minBeds) return false;
+            if (p.baths < minBaths) return false;
+            if (hoodFilter === 'target' && !primaryTarget.includes(p.neighborhood)) return false;
+            return true;
+        });
+
+        const [field, dir] = sortBy.split('-');
+        filtered.sort((a, b) => {
+            let va = a[field], vb = b[field];
+            if (va == null) va = dir === 'asc' ? Infinity : -Infinity;
+            if (vb == null) vb = dir === 'asc' ? Infinity : -Infinity;
+            return dir === 'asc' ? va - vb : vb - va;
+        });
+
+        const tbody = document.getElementById('tableBody');
+        const noResults = document.getElementById('noResults');
+
+        if (filtered.length === 0) {
+            tbody.innerHTML = '';
+            noResults.style.display = 'block';
+            return;
+        }
+        noResults.style.display = 'none';
+
+        tbody.innerHTML = filtered.map(p => {
+            const yieldClass = p.yield >= 10 ? 'yield-high' : p.yield >= 7 ? 'yield-med' : 'yield-low';
+            const isTarget = primaryTarget.includes(p.neighborhood);
+            const scoreClass = (p.hoodScore || 0) >= 90 ? 'score-high' : (p.hoodScore || 0) >= 70 ? 'score-med' : 'score-low';
+            return `<tr>
+                <td>${p.address}</td>
+                <td><span class="neighborhood-badge ${scoreClass}">${p.neighborhood}${isTarget ? ' ⭐' : ''}</span></td>
+                <td>${p.hoodScore || '--'}</td>
+                <td class="price">$${(p.price/1000).toFixed(0)}K</td>
+                <td>${p.beds}</td>
+                <td>${p.baths}</td>
+                <td>${p.sqft ? p.sqft.toLocaleString() : '--'}</td>
+                <td class="yield-cell ${yieldClass}">${p.yield ? p.yield.toFixed(1) + '%' : '--'}</td>
+                <td class="revenue">${p.revenue ? '$' + (p.revenue/1000).toFixed(1) + 'K' : '--'}</td>
+                <td>${p.occupancy ? p.occupancy + '%' : '--'}</td>
+                <td>${p.adr ? '$' + p.adr : '--'}</td>
+                <td>${p.dom || '--'}</td>
+            </tr>`;
+        }).join('');
+    }
+
+    loadData();
+    </script>
+</body>
+</html>
