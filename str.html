@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏠 STR Investment Tracker</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; }
+        .header { background: linear-gradient(135deg, #1a1f2e 0%, #2d1f3d 100%); padding: 32px; border-bottom: 1px solid #30363d; }
+        .header h1 { font-size: 28px; font-weight: 700; color: #fff; }
+        .header .subtitle { color: #8b949e; font-size: 14px; margin-top: 6px; }
+        .back-link { padding: 12px 32px; }
+        .back-link a { color: #8b949e; text-decoration: none; font-size: 13px; }
+        .back-link a:hover { color: #58a6ff; }
+        .markets { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 24px 32px; }
+        .market-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
+        .market-card:hover { border-color: #58a6ff; transform: translateY(-2px); }
+        .market-card a { text-decoration: none; color: inherit; display: block; }
+        .card-header { padding: 20px 20px 12px; }
+        .card-header .icon { font-size: 32px; margin-bottom: 8px; }
+        .card-header h2 { font-size: 20px; font-weight: 700; color: #fff; }
+        .card-header .location { color: #8b949e; font-size: 13px; margin-top: 4px; }
+        .card-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #30363d; }
+        .card-stat { background: #161b22; padding: 12px; text-align: center; }
+        .card-stat .label { font-size: 10px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+        .card-stat .val { font-size: 18px; font-weight: 700; margin-top: 2px; }
+        .card-stat .val.green { color: #3fb950; }
+        .card-stat .val.blue { color: #58a6ff; }
+        .card-stat .val.orange { color: #d29922; }
+        .card-footer { padding: 14px 20px; border-top: 1px solid #30363d; display: flex; justify-content: space-between; align-items: center; }
+        .card-footer .view { color: #58a6ff; font-size: 13px; font-weight: 600; }
+        .card-footer .updated { color: #484f58; font-size: 11px; }
+        .summary { padding: 0 32px 32px; }
+        .summary h3 { font-size: 16px; color: #8b949e; margin-bottom: 12px; font-weight: 500; }
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+        .sum-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; }
+        .sum-card .label { font-size: 11px; color: #8b949e; text-transform: uppercase; }
+        .sum-card .val { font-size: 24px; font-weight: 700; color: #fff; margin-top: 4px; }
+        @media (max-width: 768px) {
+            .header, .back-link, .markets, .summary { padding-left: 16px; padding-right: 16px; }
+            .markets { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏠 STR Investment Tracker</h1>
+        <div class="subtitle">Short-term rental for-sale properties across target markets — powered by AirDNA</div>
+    </div>
+    <div class="back-link">
+        <a href="dashboard.html">← Back to Jaks Dashboard</a>
+    </div>
+
+    <div class="markets" id="markets"></div>
+
+    <div class="summary">
+        <h3>📊 Combined Portfolio Summary</h3>
+        <div class="summary-grid" id="summaryGrid"></div>
+    </div>
+
+    <script>
+    const MARKETS = [
+        { name: 'San Francisco', icon: '🌉', location: 'SF Bay Area, California', file: 'data.json', page: 'index.html', color: '#58a6ff' },
+        { name: 'Sierra Cabin', icon: '🏔️', location: 'Long Barn / Pinecrest / N. Sierra Mtns', file: 'cabin-data.json', page: 'cabin.html', color: '#3fb950' },
+        { name: 'Santa Cruz', icon: '🏖️', location: 'Capitola / Aptos / Santa Cruz', file: 'santacruz-data.json', page: 'santacruz.html', color: '#bc8cff' }
+    ];
+
+    let allData = [];
+
+    async function load() {
+        const results = await Promise.all(MARKETS.map(async m => {
+            try {
+                const r = await fetch(m.file + '?' + Date.now());
+                return { ...m, data: await r.json() };
+            } catch(e) { return { ...m, data: { properties: [] } }; }
+        }));
+        allData = results;
+        render();
+    }
+
+    function render() {
+        const container = document.getElementById('markets');
+        let totalProps = 0, totalValue = 0, avgYield = 0, yieldCount = 0;
+
+        container.innerHTML = allData.map(m => {
+            const props = m.data.properties || [];
+            totalProps += props.length;
+            const avgP = props.length ? Math.round(props.reduce((s,p) => s + p.price, 0) / props.length / 1000) : 0;
+            totalValue += props.reduce((s,p) => s + p.price, 0);
+            const avgY = props.length ? (props.reduce((s,p) => s + (p.yield||0), 0) / props.length) : 0;
+            if (props.length) { avgYield += avgY * props.length; yieldCount += props.length; }
+            const avgR = props.length ? (props.reduce((s,p) => s + (p.revenue||0), 0) / props.length / 1000).toFixed(1) : 0;
+            const updated = m.data.lastUpdated ? new Date(m.data.lastUpdated).toLocaleDateString() : '--';
+
+            return \`<div class="market-card">
+                <a href="\${m.page}">
+                    <div class="card-header">
+                        <div class="icon">\${m.icon}</div>
+                        <h2>\${m.name}</h2>
+                        <div class="location">\${m.location}</div>
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-stat"><div class="label">Properties</div><div class="val orange">\${props.length}</div></div>
+                        <div class="card-stat"><div class="label">Avg Yield</div><div class="val green">\${avgY.toFixed(1)}%</div></div>
+                        <div class="card-stat"><div class="label">Avg Price</div><div class="val blue">$\${avgP}K</div></div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="view">View Properties →</span>
+                        <span class="updated">Updated \${updated}</span>
+                    </div>
+                </a>
+            </div>\`;
+        }).join('');
+
+        const overallYield = yieldCount ? (avgYield / yieldCount).toFixed(1) : '--';
+        document.getElementById('summaryGrid').innerHTML = \`
+            <div class="sum-card"><div class="label">Total Properties</div><div class="val" style="color:#d29922">\${totalProps}</div></div>
+            <div class="sum-card"><div class="label">Total Value Tracked</div><div class="val" style="color:#58a6ff">$\${(totalValue/1000000).toFixed(1)}M</div></div>
+            <div class="sum-card"><div class="label">Avg Yield (All)</div><div class="val" style="color:#3fb950">\${overallYield}%</div></div>
+            <div class="sum-card"><div class="label">Markets Tracked</div><div class="val">\${allData.length}</div></div>
+        \`;
+    }
+
+    load();
+    </script>
+</body>
+</html>
