@@ -1,50 +1,50 @@
 {
-  "lastUpdated": "2026-02-25T00:16:47-08:00",
+  "lastUpdated": "2026-03-01T20:45:40-08:00",
   "quickStats": {
     "btc": {
-      "icon": "\u20bf",
-      "value": "$63,946",
-      "label": "Bitcoin (\u25bc3.2%)"
+      "icon": "₿",
+      "value": "$66,840",
+      "label": "Bitcoin (▼0.8%)"
     },
     "eth": {
-      "icon": "\u27e0",
-      "value": "$1,848",
-      "label": "Ethereum (\u25bc3.2%)"
+      "icon": "⟠",
+      "value": "$1,976",
+      "label": "Ethereum (▼2.0%)"
     },
     "solar": {
-      "icon": "\u2600\ufe0f",
-      "value": "25.1 kWh",
+      "icon": "☀️",
+      "value": "27.6 kWh",
       "label": "Yesterday Solar"
     },
     "alerts": {
-      "icon": "\ud83d\udd14",
+      "icon": "🔔",
       "value": "6",
       "label": "Active Monitors"
     },
     "cron": {
-      "icon": "\u23f0",
-      "value": "11",
+      "icon": "⏰",
+      "value": "13",
       "label": "Cron Jobs"
     },
     "str": {
-      "icon": "\ud83c\udfe0",
+      "icon": "🏠",
       "value": "21",
       "label": "STR Properties"
     }
   },
   "alerts": [
     {
-      "icon": "\u20bf",
+      "icon": "₿",
       "name": "Bitcoin $77K Alert",
       "status": "active",
       "statusText": "Active",
-      "body": "Watching for BTC to hit <span class='value-orange'>$77,000</span> \u2014 trigger to sell ETH.<br>Current: <span class='highlight'>$63,787</span> (needs +20.7%)",
+      "body": "Watching for BTC to hit <span class='value-orange'>$77,000</span> — trigger to sell ETH.<br>Current: <span class='highlight'>$66,840</span> (needs +15.2%)",
       "schedule": "Every 15 min",
       "lastRun": "Feb 24, 7:32 AM",
-      "lastResult": "BTC at $63,895 \u2014 well below $77K. No alert needed."
+      "lastResult": "BTC at $63,895 — well below $77K. No alert needed."
     },
     {
-      "icon": "\ud83c\udf7d\ufe0f",
+      "icon": "🍽️",
       "name": "Gymkhana Resy Monitor",
       "status": "watching",
       "statusText": "Watching",
@@ -54,7 +54,7 @@
       "lastResult": "No tables available for Mar 5 or 6 (party of 4). Next online availability showing Mar 30."
     },
     {
-      "icon": "\ud83c\udfce\ufe0f",
+      "icon": "🏎️",
       "name": "RX-7 FD Deal Alert",
       "status": "active",
       "statusText": "Active",
@@ -64,31 +64,31 @@
       "lastResult": "Search completed. Only messages Jimmy if matches found."
     },
     {
-      "icon": "\u2708\ufe0f",
+      "icon": "✈️",
       "name": "UK Flight Price Monitor",
       "status": "active",
       "statusText": "Active",
-      "body": "Tracking <span class='highlight'>SFO \u2194 London Heathrow</span><br>Dates: Jun 2-4 departures, Jun 16-17 returns<br>Nonstop + 1-stop options",
+      "body": "Tracking <span class='highlight'>SFO ↔ London Heathrow</span><br>Dates: Jun 2-4 departures, Jun 16-17 returns<br>Nonstop + 1-stop options",
       "schedule": "Daily at 8 AM",
       "lastRun": "Feb 24, 8:00 AM",
       "lastResult": "Price check completed. Update sent to Jimmy via iMessage."
     },
     {
-      "icon": "\ud83c\udfe0",
+      "icon": "🏠",
       "name": "STR Property Tracker",
       "status": "active",
       "statusText": "Active",
-      "body": "Monitoring <span class='highlight'>SF for-sale properties</span> on AirDNA<br>Target: 2+ bed, 2+ bath, \u2264$750K<br>Neighborhoods: South Beach, Alamo Square, Noe Valley, Marina, Daly City, Mission Bay<br>Currently <span class='value-orange'>0 matches</span> in target hoods at this price",
+      "body": "Monitoring <span class='highlight'>SF for-sale properties</span> on AirDNA<br>Target: 2+ bed, 2+ bath, ≤$750K<br>Neighborhoods: South Beach, Alamo Square, Noe Valley, Marina, Daly City, Mission Bay<br>Currently <span class='value-orange'>0 matches</span> in target hoods at this price",
       "schedule": "Daily at 9 AM",
-      "lastRun": "Feb 24 \u2014 initial scrape",
+      "lastRun": "Feb 24 — initial scrape",
       "lastResult": "21 properties scraped. 0 matches in target neighborhoods under $750K. Best options: 601 Van Ness $675K (Civic Center, 2/2, 9.1% yield), 134 Albatross $695K (Bayview, 4/3, 14% yield)."
     },
     {
-      "icon": "\ud83d\udce7",
+      "icon": "📧",
       "name": "Insurance Broker Follow-up",
       "status": "watching",
       "statusText": "Pending",
-      "body": "Emails drafted to 3 brokers:<br>\u2022 TCS Insurance (22+ carriers)<br>\u2022 Avantika's Insurance (5.0\u2b50)<br>\u2022 Hashimi Insurance<br>Waiting for Jimmy to review/send",
+      "body": "Emails drafted to 3 brokers:<br>• TCS Insurance (22+ carriers)<br>• Avantika's Insurance (5.0⭐)<br>• Hashimi Insurance<br>Waiting for Jimmy to review/send",
       "schedule": "Manual",
       "lastRun": "",
       "lastResult": "Draft emails created in jimmy@apexrealty.io Gmail. Awaiting Jimmy's review before sending."
@@ -96,47 +96,47 @@
   ],
   "tasks": [
     {
-      "icon": "\u2600\ufe0f",
+      "icon": "☀️",
       "name": "Daily Brief",
       "status": "active",
       "statusText": "Running",
       "body": "BTC, ETH, solar, weather (3 cities), Lakers, Eagles, financial/world/tech news<br>Delivered via iMessage",
       "schedule": "Daily at 7:30 AM PST",
       "lastRun": "Feb 24, 7:30 AM",
-      "lastResult": "\u2705 Brief delivered via iMessage. BTC $63,787 (\u25bc3.2%), ETH $1,844 (\u25bc3.2%), Solar 25.1 kWh. Delivery wrapper errored but message sent successfully."
+      "lastResult": "✅ Brief delivered via iMessage. BTC $63,787 (▼3.2%), ETH $1,844 (▼3.2%), Solar 25.1 kWh. Delivery wrapper errored but message sent successfully."
     },
     {
-      "icon": "\ud83d\udccb",
+      "icon": "📋",
       "name": "IHSS Timesheet (Fill)",
       "status": "active",
       "statusText": "Scheduled",
-      "body": "Auto-fill Parminder's timesheet on IHSS portal<br>Provider: Parminder Bhullar \u2192 Recipient: Sanjit Bhullar<br>Saves but does NOT submit \u2014 confirms with Jimmy first",
+      "body": "Auto-fill Parminder's timesheet on IHSS portal<br>Provider: Parminder Bhullar → Recipient: Sanjit Bhullar<br>Saves but does NOT submit — confirms with Jimmy first",
       "schedule": "15th & last day of month, 9:00 AM",
       "lastRun": "Feb 15, 9:00 AM",
-      "lastResult": "\u2705 Timesheet filled for Feb 1-15. All workweeks saved. Total hours confirmed with Jimmy, then submitted."
+      "lastResult": "✅ Timesheet filled for Feb 1-15. All workweeks saved. Total hours confirmed with Jimmy, then submitted."
     },
     {
-      "icon": "\u2705",
+      "icon": "✅",
       "name": "IHSS Timesheet (Approve)",
       "status": "active",
       "statusText": "Scheduled",
       "body": "Auto-approve as recipient Sanjit Bhullar<br>Runs 10 min after fill job",
       "schedule": "15th & last day of month, 9:10 AM",
       "lastRun": "Feb 15, 9:10 AM",
-      "lastResult": "\u2705 Timesheet approved as Sanjit Bhullar. Confirmation sent to Jimmy."
+      "lastResult": "✅ Timesheet approved as Sanjit Bhullar. Confirmation sent to Jimmy."
     },
     {
-      "icon": "\ud83d\udcbe",
+      "icon": "💾",
       "name": "Weekly Backup",
       "status": "active",
       "statusText": "Running",
       "body": "Backs up: workspace, openclaw.json, cron-jobs.json<br>Location: ~/Documents/openclaw_backup/",
       "schedule": "Sundays at 3:00 AM",
       "lastRun": "Feb 23, 3:00 AM",
-      "lastResult": "\u2705 Backup completed successfully."
+      "lastResult": "✅ Backup completed successfully."
     },
     {
-      "icon": "\ud83c\udfb0",
+      "icon": "🎰",
       "name": "Vegas Trip Reminder",
       "status": "watching",
       "statusText": "Pending",
@@ -150,12 +150,12 @@
     {
       "time": "Feb 24, 4:15 PM",
       "source": "STR Tracker",
-      "message": "Built SF STR Property Tracker dashboard. 21 properties loaded. 0 matches in target neighborhoods at \u2264$750K with 2+/2+."
+      "message": "Built SF STR Property Tracker dashboard. 21 properties loaded. 0 matches in target neighborhoods at ≤$750K with 2+/2+."
     },
     {
       "time": "Feb 24, 2:00 PM",
       "source": "Gymkhana",
-      "message": "\ud83c\udf7d\ufe0f No tables available for Mar 5 or 6, party of 4. Next online availability Mar 30. Still watching."
+      "message": "🍽️ No tables available for Mar 5 or 6, party of 4. Next online availability Mar 30. Still watching."
     },
     {
       "time": "Feb 24, 1:03 PM",
@@ -165,7 +165,7 @@
     {
       "time": "Feb 24, 11:00 AM",
       "source": "Gymkhana",
-      "message": "\ud83c\udf7d\ufe0f No tables for Mar 5 or 6 (party of 4). Next availability Mar 30."
+      "message": "🍽️ No tables for Mar 5 or 6 (party of 4). Next availability Mar 30."
     },
     {
       "time": "Feb 24, 10:00 AM",
@@ -175,22 +175,22 @@
     {
       "time": "Feb 24, 8:03 AM",
       "source": "Gymkhana",
-      "message": "\ud83c\udf7d\ufe0f No tables for Mar 5 or 6. Still watching."
+      "message": "🍽️ No tables for Mar 5 or 6. Still watching."
     },
     {
       "time": "Feb 24, 8:00 AM",
       "source": "UK Flights",
-      "message": "SFO\u2194LHR price check completed."
+      "message": "SFO↔LHR price check completed."
     },
     {
       "time": "Feb 24, 7:32 AM",
       "source": "BTC Alert",
-      "message": "BTC at $63,895 \u2014 well below $77K target. No alert needed."
+      "message": "BTC at $63,895 — well below $77K target. No alert needed."
     },
     {
       "time": "Feb 24, 7:30 AM",
       "source": "Daily Brief",
-      "message": "Brief delivered via iMessage. BTC $63,787 (\u25bc3.2%), ETH $1,844 (\u25bc3.2%), Solar 25.1 kWh."
+      "message": "Brief delivered via iMessage. BTC $63,787 (▼3.2%), ETH $1,844 (▼3.2%), Solar 25.1 kWh."
     },
     {
       "time": "Feb 23, 3:00 AM",
@@ -199,48 +199,48 @@
     }
   ],
   "dailyBrief": {
-    "date": "Tuesday, February 24, 2026",
+    "date": "Sunday, March 1, 2026",
     "sections": [
       {
-        "icon": "\ud83d\udcb0",
+        "icon": "💰",
         "label": "Crypto",
         "items": [
-          "BTC: <span class='down'>$63,787 (\u25bc 3.2%)</span>",
-          "ETH: <span class='down'>$1,844 (\u25bc 3.2%)</span>"
+          "BTC: <span class='down'>$66,840 (▼ 0.8%)</span>",
+          "ETH: <span class='down'>$1,976 (▼ 2.0%)</span>"
         ]
       },
       {
-        "icon": "\u26a1",
+        "icon": "⚡",
         "label": "Solar",
         "items": [
-          "Yesterday: <span class='up'>25.1 kWh</span> | Peak: 4,827W"
+          "Yesterday: <span class='up'>27.6 kWh</span> | Peak: 5,603W"
         ]
       },
       {
-        "icon": "\ud83c\udf26\ufe0f",
+        "icon": "🌦️",
         "label": "Weather",
         "items": [
-          "Mountain House: 56-69\u00b0F, drizzle",
-          "Long Barn: 47-54\u00b0F, light rain",
-          "San Francisco: 53-65\u00b0F, light rain"
+          "Mountain House: 56-69°F, drizzle",
+          "Long Barn: 47-54°F, light rain",
+          "San Francisco: 53-65°F, light rain"
         ]
       },
       {
-        "icon": "\ud83c\udfc0",
+        "icon": "🏀",
         "label": "Lakers",
         "items": [
-          "34-22, 1st in Pacific \u2014 L1, lost to Celtics"
+          "34-22, 1st in Pacific — L1, lost to Celtics"
         ]
       },
       {
-        "icon": "\ud83c\udfc8",
+        "icon": "🏈",
         "label": "Eagles",
         "items": [
           "Offseason: Sirianni \"can't guarantee\" A.J. Brown returns; tush push not expected to be banned"
         ]
       },
       {
-        "icon": "\ud83d\udcc8",
+        "icon": "📈",
         "label": "Financial News",
         "items": [
           "Stocks sell off as Trump's new 10% tariffs kick in, Dow dropped 800+ pts Monday <span class='source'>(WSJ)</span>",
@@ -249,7 +249,7 @@
         ]
       },
       {
-        "icon": "\ud83c\udf0d",
+        "icon": "🌍",
         "label": "World News",
         "items": [
           "Western states rally behind Ukraine at UN on 4th anniversary of Russian invasion <span class='source'>(Reuters)</span>",
@@ -258,7 +258,7 @@
         ]
       },
       {
-        "icon": "\ud83d\udda5\ufe0f",
+        "icon": "🖥️",
         "label": "Data Center / AI",
         "items": [
           "Amazon planning large-scale DC campus next to Comanche nuclear plant in Texas <span class='source'>(DCD)</span>",
