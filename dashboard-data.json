@@ -1,50 +1,50 @@
 {
-  "lastUpdated": "2026-03-01T20:45:40-08:00",
+  "lastUpdated": "2026-03-03T07:35:00-08:00",
   "quickStats": {
     "btc": {
-      "icon": "\u20bf",
-      "value": "$66,840",
-      "label": "Bitcoin (\u25bc0.8%)"
+      "icon": "₿",
+      "value": "$67,202",
+      "label": "Bitcoin (▼2.1%)"
     },
     "eth": {
-      "icon": "\u27e0",
-      "value": "$1,976",
-      "label": "Ethereum (\u25bc2.0%)"
+      "icon": "⟠",
+      "value": "$1,951",
+      "label": "Ethereum (▼3.7%)"
     },
     "solar": {
-      "icon": "\u2600\ufe0f",
-      "value": "27.6 kWh",
+      "icon": "☀️",
+      "value": "25.2 kWh",
       "label": "Yesterday Solar"
     },
     "alerts": {
-      "icon": "\ud83d\udd14",
+      "icon": "🔔",
       "value": "6",
       "label": "Active Monitors"
     },
     "cron": {
-      "icon": "\u23f0",
-      "value": "13",
+      "icon": "⏰",
+      "value": "14",
       "label": "Cron Jobs"
     },
     "str": {
-      "icon": "\ud83c\udfe0",
+      "icon": "🏠",
       "value": "21",
       "label": "STR Properties"
     }
   },
   "alerts": [
     {
-      "icon": "\u20bf",
+      "icon": "₿",
       "name": "Bitcoin $77K Alert",
       "status": "active",
       "statusText": "Active",
-      "body": "Watching for BTC to hit <span class=\"value-orange\">$77,000</span> \u2014 trigger to sell ETH.<br>Current: <span class=\"highlight\">$66,840</span> (needs +15.2%)",
+      "body": "Watching for BTC to hit <span class=\"value-orange\">$77,000</span> — trigger to sell ETH.<br>Current: <span class=\"highlight\">$67,202</span> (needs +14.6%)",
       "schedule": "Every 15 min",
-      "lastRun": "Mar 1, 8:45 PM",
-      "lastResult": "BTC at $66,840 \u2014 below $77K. No alert needed."
+      "lastRun": "Mar 3, 7:35 AM",
+      "lastResult": "BTC at $67,202 — below $77K. No alert needed."
     },
     {
-      "icon": "\ud83c\udf7d\ufe0f",
+      "icon": "🍽️",
       "name": "Gymkhana Resy Monitor",
       "status": "watching",
       "statusText": "Watching",
@@ -54,7 +54,7 @@
       "lastResult": "No tables for Mar 5 or 6. Next availability Mar 31."
     },
     {
-      "icon": "\ud83c\udfce\ufe0f",
+      "icon": "🏎️",
       "name": "RX-7 FD Deal Alert",
       "status": "active",
       "statusText": "Active",
@@ -64,89 +64,94 @@
       "lastResult": "Found $24K SR20DET swap in Spokane + $18K FD on Facebook."
     },
     {
-      "icon": "\u2708\ufe0f",
+      "icon": "✈️",
       "name": "UK Flight Price Monitor",
       "status": "active",
       "statusText": "Active",
-      "body": "Tracking <span class=\"highlight\">SFO \u2194 London Heathrow</span><br>Dates: Jun 2-4 departures, Jun 16-17 returns",
+      "body": "Tracking <span class=\"highlight\">SFO ↔ London Heathrow</span><br>Dates: Jun 2-4 departures, Jun 16-17 returns",
       "schedule": "Daily at 8 AM",
       "lastRun": "Feb 28, 8:00 AM",
-      "lastResult": "Prices UP \u2014 best nonstop $926 (was $691). Best overall $837 Alaska 1-stop."
+      "lastResult": "Prices UP — best nonstop $926 (was $691). Best overall $837 Alaska 1-stop."
     },
     {
-      "icon": "\ud83c\udfe0",
+      "icon": "🏠",
       "name": "STR Property Tracker",
       "status": "active",
       "statusText": "Active",
       "body": "Monitoring SF, Sierra Cabin, Santa Cruz on AirDNA<br>3 markets tracked",
       "schedule": "Daily at 9 AM",
-      "lastRun": "Feb 28 \u2014 cron timing out",
+      "lastRun": "Feb 28 — cron timing out",
       "lastResult": "AirDNA scraping exceeding timeout. Data current from Feb 24."
     },
     {
-      "icon": "\ud83d\ude9b",
+      "icon": "🚛",
       "name": "Truck Yard Search",
       "status": "active",
       "statusText": "NEW",
       "body": "Searching for truck yards & repair shops for sale<br>Cities: Modesto, Ceres, Turlock, Ripon, Stockton, Manteca, Merced",
       "schedule": "Daily at 10 AM",
-      "lastRun": "Mar 1 \u2014 initial search",
+      "lastRun": "Mar 1 — initial search",
       "lastResult": "Found 16+ listings. Top: Ceres 5.22ac, Stockton 4.78ac, Manteca 10ac, Chowchilla 5ac."
     }
   ],
   "tasks": [
     {
-      "icon": "\u2600\ufe0f",
+      "icon": "☀️",
       "name": "Daily Brief",
       "status": "active",
       "statusText": "Running",
       "body": "BTC, ETH, solar, weather (3 cities), Lakers, Eagles, financial/world/tech news<br>Delivered via iMessage",
       "schedule": "Daily at 7:30 AM PST",
       "lastRun": "Mar 1, 7:31 AM",
-      "lastResult": "\u2705 Brief delivered. BTC $67,143, ETH $2,011, Solar 24.2 kWh."
+      "lastResult": "✅ Brief delivered. BTC $67,202, ETH $1,951, Solar 25.2 kWh."
     },
     {
-      "icon": "\ud83d\udcca",
+      "icon": "📊",
       "name": "Dashboard Update",
       "status": "active",
       "statusText": "NEW",
       "body": "Auto-updates crypto, solar, cron counts and pushes to GitHub",
       "schedule": "Daily at 7:35 AM PST",
-      "lastRun": "Mar 1 \u2014 just created",
-      "lastResult": "\u2705 First run pending tomorrow."
+      "lastRun": "Mar 3, 7:35 AM",
+      "lastResult": "✅ Updated. BTC $67,202, ETH $1,951, Solar 25.2 kWh."
     },
     {
-      "icon": "\ud83d\udccb",
+      "icon": "📋",
       "name": "IHSS Timesheet (Fill + Approve)",
       "status": "active",
       "statusText": "Scheduled",
-      "body": "Auto-fill & approve Parminder \u2192 Sanjit timesheet<br>Saves, confirms with Jimmy, then submits & approves",
+      "body": "Auto-fill & approve Parminder → Sanjit timesheet<br>Saves, confirms with Jimmy, then submits & approves",
       "schedule": "15th & last day of month, 9:00/9:10 AM",
       "lastRun": "Feb 28, 9:02 AM",
-      "lastResult": "\u2705 Feb 16-28: 52H 16M submitted & approved for payment."
+      "lastResult": "✅ Feb 16-28: 52H 16M submitted & approved for payment."
     },
     {
-      "icon": "\ud83d\udcbe",
+      "icon": "💾",
       "name": "Weekly Backup",
       "status": "active",
       "statusText": "Running",
       "body": "Backs up: workspace, openclaw.json, cron-jobs.json<br>Location: ~/Documents/openclaw_backup/",
       "schedule": "Sundays at 3:00 AM",
       "lastRun": "Mar 1, 3:00 AM",
-      "lastResult": "\u2705 Backup completed."
+      "lastResult": "✅ Backup completed."
     },
     {
-      "icon": "\ud83d\udce7",
+      "icon": "📧",
       "name": "Gmail Inbox Monitoring",
       "status": "active",
       "statusText": "Active",
       "body": "Monitoring jimmy@apexrealty.io inbox<br>Action Needed label for important emails",
       "schedule": "On demand / heartbeats",
       "lastRun": "Feb 28, 3:55 PM",
-      "lastResult": "\u2705 235 emails triaged. 22 in Action Needed. 0 unread."
+      "lastResult": "✅ 235 emails triaged. 22 in Action Needed. 0 unread."
     }
   ],
   "activityLog": [
+    {
+      "time": "Mar 3, 7:35 AM",
+      "source": "Dashboard",
+      "message": "Dashboard data updated and pushed to GitHub."
+    },
     {
       "time": "Mar 1, 8:47 PM",
       "source": "Dashboard",
@@ -155,27 +160,27 @@
     {
       "time": "Mar 1, 8:39 PM",
       "source": "Truck Yard",
-      "message": "\ud83d\ude9b Drafted emails to 3 agents: Herman Bhatti (Ceres), Danny Price (Modesto), Arman Singh (Manteca/Chowchilla)."
+      "message": "🚛 Drafted emails to 3 agents: Herman Bhatti (Ceres), Danny Price (Modesto), Arman Singh (Manteca/Chowchilla)."
     },
     {
       "time": "Mar 1, 7:58 PM",
       "source": "Truck Yard",
-      "message": "\ud83d\ude9b NEW \u2014 Found 16+ truck yard/repair shop listings across 7 Central Valley cities. Daily monitoring set up."
+      "message": "🚛 NEW — Found 16+ truck yard/repair shop listings across 7 Central Valley cities. Daily monitoring set up."
     },
     {
       "time": "Mar 1, 2:58 PM",
       "source": "Reminder",
-      "message": "\u23f0 Call Arsh reminder sent."
+      "message": "⏰ Call Arsh reminder sent."
     },
     {
       "time": "Mar 1, 1:58 PM",
       "source": "Elk Grove",
-      "message": "\ud83c\udfe0 Drafted showing request for 10025 Winkle Cir to Annalise Tran (Redfin)."
+      "message": "🏠 Drafted showing request for 10025 Winkle Cir to Annalise Tran (Redfin)."
     },
     {
       "time": "Mar 1, 9:00 AM",
       "source": "Reminder",
-      "message": "\u23f0 Chase payments reminder sent."
+      "message": "⏰ Chase payments reminder sent."
     },
     {
       "time": "Mar 1, 7:31 AM",
@@ -185,12 +190,12 @@
     {
       "time": "Feb 28, 3:55 PM",
       "source": "Gmail",
-      "message": "\ud83d\udce7 Full inbox triage: 235 emails processed, 22 moved to Action Needed, 0 unread remaining."
+      "message": "📧 Full inbox triage: 235 emails processed, 22 moved to Action Needed, 0 unread remaining."
     },
     {
       "time": "Feb 28, 9:15 AM",
       "source": "IHSS",
-      "message": "\u2705 Timesheet submitted & approved. Feb 16-28, 52H 16M."
+      "message": "✅ Timesheet submitted & approved. Feb 16-28, 52H 16M."
     },
     {
       "time": "Feb 28, 7:30 AM",
@@ -199,48 +204,48 @@
     }
   ],
   "dailyBrief": {
-    "date": "Sunday, March 1, 2026",
+    "date": "Tuesday, March 3, 2026",
     "sections": [
       {
-        "icon": "\ud83d\udcb0",
+        "icon": "💰",
         "label": "Crypto",
         "items": [
-          "BTC: <span class='down'>$66,840 (\u25bc 0.8%)</span>",
-          "ETH: <span class='down'>$1,976 (\u25bc 2.0%)</span>"
+          "BTC: <span class='down'>$67,202 (▼ 2.1%)</span>",
+          "ETH: <span class='down'>$1,951 (▼ 3.7%)</span>"
         ]
       },
       {
-        "icon": "\u26a1",
+        "icon": "⚡",
         "label": "Solar",
         "items": [
-          "Yesterday: <span class='up'>27.6 kWh</span> | Peak: 5,603W"
+          "Yesterday: <span class='up'>25.2 kWh</span> | Peak: 6,215W"
         ]
       },
       {
-        "icon": "\ud83c\udf26\ufe0f",
+        "icon": "🌦️",
         "label": "Weather",
         "items": [
-          "Mountain House: 56-69\u00b0F, drizzle",
-          "Long Barn: 47-54\u00b0F, light rain",
-          "San Francisco: 53-65\u00b0F, light rain"
+          "Mountain House: 56-69°F, drizzle",
+          "Long Barn: 47-54°F, light rain",
+          "San Francisco: 53-65°F, light rain"
         ]
       },
       {
-        "icon": "\ud83c\udfc0",
+        "icon": "🏀",
         "label": "Lakers",
         "items": [
-          "34-22, 1st in Pacific \u2014 L1, lost to Celtics"
+          "34-22, 1st in Pacific — L1, lost to Celtics"
         ]
       },
       {
-        "icon": "\ud83c\udfc8",
+        "icon": "🏈",
         "label": "Eagles",
         "items": [
           "Offseason: Sirianni \"can't guarantee\" A.J. Brown returns; tush push not expected to be banned"
         ]
       },
       {
-        "icon": "\ud83d\udcc8",
+        "icon": "📈",
         "label": "Financial News",
         "items": [
           "Stocks sell off as Trump's new 10% tariffs kick in, Dow dropped 800+ pts Monday <span class='source'>(WSJ)</span>",
@@ -249,7 +254,7 @@
         ]
       },
       {
-        "icon": "\ud83c\udf0d",
+        "icon": "🌍",
         "label": "World News",
         "items": [
           "Western states rally behind Ukraine at UN on 4th anniversary of Russian invasion <span class='source'>(Reuters)</span>",
@@ -258,7 +263,7 @@
         ]
       },
       {
-        "icon": "\ud83d\udda5\ufe0f",
+        "icon": "🖥️",
         "label": "Data Center / AI",
         "items": [
           "Amazon planning large-scale DC campus next to Comanche nuclear plant in Texas <span class='source'>(DCD)</span>",
