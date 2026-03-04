@@ -1,19 +1,19 @@
 {
-  "lastUpdated": "2026-03-03T07:35:00-08:00",
+  "lastUpdated": "2026-03-04T07:35:00-08:00",
   "quickStats": {
     "btc": {
       "icon": "₿",
-      "value": "$67,202",
-      "label": "Bitcoin (▼2.1%)"
+      "value": "$72,881",
+      "label": "Bitcoin (▲8.4%)"
     },
     "eth": {
       "icon": "⟠",
-      "value": "$1,951",
-      "label": "Ethereum (▼3.7%)"
+      "value": "$2,130",
+      "label": "Ethereum (▲9.1%)"
     },
     "solar": {
       "icon": "☀️",
-      "value": "25.2 kWh",
+      "value": "32.1 kWh",
       "label": "Yesterday Solar"
     },
     "alerts": {
@@ -23,7 +23,7 @@
     },
     "cron": {
       "icon": "⏰",
-      "value": "14",
+      "value": "22",
       "label": "Cron Jobs"
     },
     "str": {
@@ -38,10 +38,10 @@
       "name": "Bitcoin $77K Alert",
       "status": "active",
       "statusText": "Active",
-      "body": "Watching for BTC to hit <span class=\"value-orange\">$77,000</span> — trigger to sell ETH.<br>Current: <span class=\"highlight\">$67,202</span> (needs +14.6%)",
+      "body": "Watching for BTC to hit <span class=\"value-orange\">$77,000</span> — trigger to sell ETH.<br>Current: <span class=\"highlight\">$72,881</span> (needs +5.7%)",
       "schedule": "Every 15 min",
-      "lastRun": "Mar 3, 7:35 AM",
-      "lastResult": "BTC at $67,202 — below $77K. No alert needed."
+      "lastRun": "Mar 4, 7:35 AM",
+      "lastResult": "BTC at $72,881 — below $77K. No alert needed."
     },
     {
       "icon": "🍽️",
@@ -102,8 +102,8 @@
       "statusText": "Running",
       "body": "BTC, ETH, solar, weather (3 cities), Lakers, Eagles, financial/world/tech news<br>Delivered via iMessage",
       "schedule": "Daily at 7:30 AM PST",
-      "lastRun": "Mar 1, 7:31 AM",
-      "lastResult": "✅ Brief delivered. BTC $67,202, ETH $1,951, Solar 25.2 kWh."
+      "lastRun": "Mar 4, 7:30 AM",
+      "lastResult": "✅ Brief delivered. BTC $72,881, ETH $2,130, Solar 32.1 kWh."
     },
     {
       "icon": "📊",
@@ -112,8 +112,8 @@
       "statusText": "NEW",
       "body": "Auto-updates crypto, solar, cron counts and pushes to GitHub",
       "schedule": "Daily at 7:35 AM PST",
-      "lastRun": "Mar 3, 7:35 AM",
-      "lastResult": "✅ Updated. BTC $67,202, ETH $1,951, Solar 25.2 kWh."
+      "lastRun": "Mar 4, 7:35 AM",
+      "lastResult": "✅ Updated. BTC $72,881, ETH $2,130, Solar 32.1 kWh."
     },
     {
       "icon": "📋",
@@ -147,6 +147,11 @@
     }
   ],
   "activityLog": [
+    {
+      "time": "Mar 4, 7:35 AM",
+      "source": "Dashboard",
+      "message": "Dashboard data updated and pushed to GitHub."
+    },
     {
       "time": "Mar 3, 7:35 AM",
       "source": "Dashboard",
@@ -204,21 +209,21 @@
     }
   ],
   "dailyBrief": {
-    "date": "Tuesday, March 3, 2026",
+    "date": "Wednesday, March 4, 2026",
     "sections": [
       {
         "icon": "💰",
         "label": "Crypto",
         "items": [
-          "BTC: <span class='down'>$67,202 (▼ 2.1%)</span>",
-          "ETH: <span class='down'>$1,951 (▼ 3.7%)</span>"
+          "BTC: <span class='up'>$72,881 (▲ 8.4%)</span>",
+          "ETH: <span class='up'>$2,130 (▲ 9.1%)</span>"
         ]
       },
       {
         "icon": "⚡",
         "label": "Solar",
         "items": [
-          "Yesterday: <span class='up'>25.2 kWh</span> | Peak: 6,215W"
+          "Yesterday: <span class='up'>32.1 kWh</span> | Peak: 4,784W"
         ]
       },
       {
