@@ -44,16 +44,6 @@
       "lastResult": "BTC at $67,964 — below $77K. No alert needed."
     },
     {
-      "icon": "🍽️",
-      "name": "Gymkhana Resy Monitor",
-      "status": "watching",
-      "statusText": "Watching",
-      "body": "Looking for table at <span class=\"highlight\">Gymkhana Las Vegas (ARIA)</span><br>Dates: <span class=\"value-blue\">Mar 5 or 6</span>, party of 4, 7-9 PM",
-      "schedule": "5x daily (8AM, 11AM, 2PM, 5PM, 9PM)",
-      "lastRun": "Mar 1, 5:00 PM",
-      "lastResult": "No tables for Mar 5 or 6. Next availability Mar 31."
-    },
-    {
       "icon": "🏎️",
       "name": "RX-7 FD Deal Alert",
       "status": "active",
