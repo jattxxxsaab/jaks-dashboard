@@ -1,19 +1,19 @@
 {
-  "lastUpdated": "2026-03-07T07:35:00-08:00",
+  "lastUpdated": "2026-03-08T07:35:00-08:00",
   "quickStats": {
     "btc": {
       "icon": "₿",
-      "value": "$67,964",
-      "label": "Bitcoin (▼1.3%)"
+      "value": "$67,344",
+      "label": "Bitcoin (▼0.7%)"
     },
     "eth": {
       "icon": "⟠",
-      "value": "$1,983",
-      "label": "Ethereum (▼0.4%)"
+      "value": "$1,946",
+      "label": "Ethereum (▼1.5%)"
     },
     "solar": {
       "icon": "☀️",
-      "value": "32.9 kWh",
+      "value": "30.0 kWh",
       "label": "Yesterday Solar"
     },
     "alerts": {
@@ -38,10 +38,10 @@
       "name": "Bitcoin $77K Alert",
       "status": "active",
       "statusText": "Active",
-      "body": "Watching for BTC to hit <span class=\"value-orange\">$77,000</span> — trigger to sell ETH.<br>Current: <span class=\"highlight\">$67,964</span> (needs +13.3%)",
+      "body": "Watching for BTC to hit <span class=\"value-orange\">$77,000</span> — trigger to sell ETH.<br>Current: <span class=\"highlight\">$67,344</span> (needs +14.3%)",
       "schedule": "Every 15 min",
-      "lastRun": "Mar 7, 7:35 AM",
-      "lastResult": "BTC at $67,964 — below $77K. No alert needed."
+      "lastRun": "Mar 8, 7:35 AM",
+      "lastResult": "BTC at $67,344 — below $77K. No alert needed."
     },
     {
       "icon": "🏎️",
@@ -92,18 +92,18 @@
       "statusText": "Running",
       "body": "BTC, ETH, solar, weather (3 cities), Lakers, Eagles, financial/world/tech news<br>Delivered via iMessage",
       "schedule": "Daily at 7:30 AM PST",
-      "lastRun": "Mar 7, 7:30 AM",
-      "lastResult": "✅ Brief delivered. BTC $67,964, ETH $1,983, Solar 32.9 kWh."
+      "lastRun": "Mar 8, 7:30 AM",
+      "lastResult": "✅ Brief delivered. BTC $67,344, ETH $1,946, Solar 30.0 kWh."
     },
     {
       "icon": "📊",
       "name": "Dashboard Update",
       "status": "active",
-      "statusText": "NEW",
+      "statusText": "Running",
       "body": "Auto-updates crypto, solar, cron counts and pushes to GitHub",
       "schedule": "Daily at 7:35 AM PST",
-      "lastRun": "Mar 7, 7:35 AM",
-      "lastResult": "✅ Updated. BTC $67,964, ETH $1,983, Solar 32.9 kWh."
+      "lastRun": "Mar 8, 7:35 AM",
+      "lastResult": "✅ Updated. BTC $67,344, ETH $1,946, Solar 30.0 kWh."
     },
     {
       "icon": "📋",
@@ -122,7 +122,7 @@
       "statusText": "Running",
       "body": "Backs up: workspace, openclaw.json, cron-jobs.json<br>Location: ~/Documents/openclaw_backup/",
       "schedule": "Sundays at 3:00 AM",
-      "lastRun": "Mar 1, 3:00 AM",
+      "lastRun": "Mar 8, 3:00 AM",
       "lastResult": "✅ Backup completed."
     },
     {
@@ -133,10 +133,15 @@
       "body": "Monitoring jimmy@apexrealty.io inbox<br>Action Needed label for important emails",
       "schedule": "On demand / heartbeats",
       "lastRun": "Feb 28, 3:55 PM",
-      "lastResult": "✅ 235 emails triaged. 22 in Action Needed. 0 unread."
+      "lastResult": "✅ 235 emails triaged. 22 in Action Needed. 0 unread remaining."
     }
   ],
   "activityLog": [
+    {
+      "time": "Mar 8, 7:35 AM",
+      "source": "Dashboard",
+      "message": "Dashboard data updated and pushed to GitHub."
+    },
     {
       "time": "Mar 7, 7:35 AM",
       "source": "Dashboard",
@@ -204,21 +209,21 @@
     }
   ],
   "dailyBrief": {
-    "date": "Saturday, March 7, 2026",
+    "date": "Sunday, March 8, 2026",
     "sections": [
       {
         "icon": "💰",
         "label": "Crypto",
         "items": [
-          "BTC: <span class='down'>$67,964 (▼ 1.3%)</span>",
-          "ETH: <span class='down'>$1,983 (▼ 0.4%)</span>"
+          "BTC: <span class='down'>$67,344 (▼ 0.7%)</span>",
+          "ETH: <span class='down'>$1,946 (▼ 1.5%)</span>"
         ]
       },
       {
         "icon": "⚡",
         "label": "Solar",
         "items": [
-          "Yesterday: <span class='up'>32.9 kWh</span> | Peak: 5,134W"
+          "Yesterday: <span class='up'>30.0 kWh</span> | Peak: 5,071W"
         ]
       },
       {
