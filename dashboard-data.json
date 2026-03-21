@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-20T07:35:00-08:00",
+  "lastUpdated": "2026-03-21T07:35:00-08:00",
   "quickStats": {
     "btc": {
       "icon": "₿",
-      "value": "$70,124",
-      "label": "Bitcoin (▲1.25%)"
+      "value": "$70,923",
+      "label": "Bitcoin (▲1.14%)"
     },
     "eth": {
       "icon": "⟠",
-      "value": "$2,143",
-      "label": "Ethereum (▲1.48%)"
+      "value": "$2,161",
+      "label": "Ethereum (▲0.84%)"
     },
     "solar": {
       "icon": "☀️",
@@ -38,10 +38,10 @@
       "name": "Bitcoin $77K Alert",
       "status": "active",
       "statusText": "Active",
-      "body": "Watching for BTC to hit <span class=\"value-orange\">$77,000</span> — trigger to sell ETH.<br>Current: <span class=\"highlight\">$70,124</span> (needs +9.8%)",
+      "body": "Watching for BTC to hit <span class=\"value-orange\">$77,000</span> — trigger to sell ETH.<br>Current: <span class=\"highlight\">$70,923</span> (needs +8.6%)",
       "schedule": "Every 15 min",
-      "lastRun": "Mar 20, 7:35 AM",
-      "lastResult": "BTC at $70,124 — below $77K. No alert needed."
+      "lastRun": "Mar 21, 7:35 AM",
+      "lastResult": "BTC at $70,923 — below $77K. No alert needed."
     },
     {
       "icon": "🏎️",
@@ -137,6 +137,11 @@
     }
   ],
   "activityLog": [
+    {
+      "time": "Mar 21, 7:35 AM",
+      "source": "Dashboard",
+      "message": "Dashboard data updated and pushed to GitHub."
+    },
     {
       "time": "Mar 20, 7:35 AM",
       "source": "Dashboard",
@@ -264,14 +269,14 @@
     }
   ],
   "dailyBrief": {
-    "date": "Friday, March 20, 2026",
+    "date": "Saturday, March 21, 2026",
     "sections": [
       {
         "icon": "💰",
         "label": "Crypto",
         "items": [
-          "BTC: <span class='up'>$70,124 (▲ 1.25%)</span>",
-          "ETH: <span class='up'>$2,143 (▲ 1.48%)</span>"
+          "BTC: <span class='up'>$70,923 (▲ 1.14%)</span>",
+          "ETH: <span class='up'>$2,161 (▲ 0.84%)</span>"
         ]
       },
       {
