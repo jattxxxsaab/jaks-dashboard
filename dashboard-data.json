@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-22T07:35:00-08:00",
+  "lastUpdated": "2026-03-23T07:35:00-08:00",
   "quickStats": {
     "btc": {
       "icon": "₿",
-      "value": "$68,804",
-      "label": "Bitcoin (▼3.02%)"
+      "value": "$71,342",
+      "label": "Bitcoin (▲3.70%)"
     },
     "eth": {
       "icon": "⟠",
-      "value": "$2,080",
-      "label": "Ethereum (▼3.82%)"
+      "value": "$2,176",
+      "label": "Ethereum (▲4.61%)"
     },
     "solar": {
       "icon": "☀️",
@@ -23,7 +23,7 @@
     },
     "cron": {
       "icon": "⏰",
-      "value": "37",
+      "value": "27",
       "label": "Cron Jobs"
     },
     "str": {
@@ -38,10 +38,10 @@
       "name": "Bitcoin $77K Alert",
       "status": "active",
       "statusText": "Active",
-      "body": "Watching for BTC to hit <span class=\"value-orange\">$77,000</span> — trigger to sell ETH.<br>Current: <span class=\"highlight\">$68,804</span> (needs +11.9%)",
+      "body": "Watching for BTC to hit <span class=\"value-orange\">$77,000</span> — trigger to sell ETH.<br>Current: <span class=\"highlight\">$71,342</span> (needs +7.94%)",
       "schedule": "Every 15 min",
-      "lastRun": "Mar 22, 7:35 AM",
-      "lastResult": "BTC at $68,804 — below $77K. No alert needed."
+      "lastRun": "Mar 23, 7:35 AM",
+      "lastResult": "BTC at $71,342 — below $77K. No alert needed."
     },
     {
       "icon": "🏎️",
@@ -102,8 +102,8 @@
       "statusText": "Running",
       "body": "Auto-updates crypto, solar, cron counts and pushes to GitHub",
       "schedule": "Daily at 7:35 AM PST",
-      "lastRun": "Mar 22, 7:35 AM",
-      "lastResult": "✅ Updated. BTC $68,804, ETH $2,080, Solar ~25 kWh."
+      "lastRun": "Mar 23, 7:35 AM",
+      "lastResult": "✅ Updated. BTC $71,342, ETH $2,176, Solar ~25 kWh."
     },
     {
       "icon": "📋",
@@ -137,6 +137,11 @@
     }
   ],
   "activityLog": [
+    {
+      "time": "Mar 23, 7:35 AM",
+      "source": "Dashboard",
+      "message": "Dashboard data updated and pushed to GitHub."
+    },
     {
       "time": "Mar 22, 7:35 AM",
       "source": "Dashboard",
@@ -274,14 +279,14 @@
     }
   ],
   "dailyBrief": {
-    "date": "Sunday, March 22, 2026",
+    "date": "Monday, March 23, 2026",
     "sections": [
       {
         "icon": "💰",
         "label": "Crypto",
         "items": [
-          "BTC: <span class='down'>$68,804 (▼ 3.02%)</span>",
-          "ETH: <span class='down'>$2,080 (▼ 3.82%)</span>"
+          "BTC: <span class='up'>$71,342 (▲ 3.70%)</span>",
+          "ETH: <span class='up'>$2,176 (▲ 4.61%)</span>"
         ]
       },
       {
