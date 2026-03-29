@@ -1,72 +1,155 @@
 {
-  "timestamp": "2026-03-28T21:11:00-07:00",
-  "crypto": {
+  "lastUpdated": "2026-03-28T21:26:00-07:00",
+  "quickStats": {
     "btc": {
-      "price": 96262.14,
-      "change_24h": -2.49,
-      "symbol": "BTC"
+      "icon": "₿",
+      "value": "$96,262",
+      "label": "Bitcoin"
     },
     "eth": {
-      "price": 1999.15,
-      "change_24h": -1.8,
-      "symbol": "ETH"
+      "icon": "Ξ", 
+      "value": "$1,999",
+      "label": "Ethereum"
+    },
+    "solar": {
+      "icon": "☀️",
+      "value": "0.0 kW",
+      "label": "Solar Power"
+    },
+    "lights": {
+      "icon": "💡",
+      "value": "4 ON",
+      "label": "Smart Lights"
     }
   },
-  "solar": {
-    "current_power": 0.0,
-    "today_energy": 0.0,
-    "status": "Night time - no production"
-  },
-  "weather": {
-    "location": "Mountain House, CA",
-    "temp": "52°F",
-    "condition": "Clear",
-    "humidity": "78%"
+  "dailyBrief": {
+    "date": "Saturday, March 28, 2026",
+    "sections": [
+      {
+        "icon": "💰",
+        "label": "Crypto Markets",
+        "items": [
+          "<span class='up'>BTC: $96,262</span> (-2.49% 24h)",
+          "<span class='neutral'>ETH: $1,999</span> (-1.8% 24h)"
+        ]
+      },
+      {
+        "icon": "⚡",
+        "label": "Energy",
+        "items": [
+          "Solar: 0.0 kW (nighttime)",
+          "Today's Generation: 0.0 kWh"
+        ]
+      },
+      {
+        "icon": "🏠", 
+        "label": "Smart Home",
+        "items": [
+          "Lights: 4 currently on",
+          "Patio, Kirpa's room, String lights, Outdoor"
+        ]
+      }
+    ]
   },
   "alerts": [
     {
-      "type": "info",
-      "title": "Dashboard Updated",
-      "message": "Data refreshed at 9:11 PM PST - All systems operational",
-      "time": "2026-03-28 21:11"
+      "icon": "✅",
+      "name": "Home Assistant Integration", 
+      "status": "active",
+      "statusText": "Connected",
+      "body": "Successfully connected via Nabu Casa cloud. All sensors and controls operational.",
+      "schedule": "Real-time monitoring",
+      "lastRun": "March 28, 9:26 PM",
+      "lastResult": "API responding normally, 4 lights active, solar sensors online"
     },
     {
-      "type": "success",
-      "title": "Home Assistant Connected",
-      "message": "HA integration restored via Nabu Casa cloud",
-      "time": "2026-03-28 20:55"
+      "icon": "🔍",
+      "name": "Brave Search Integration",
+      "status": "active", 
+      "statusText": "Active",
+      "body": "Web search provider switched from Google to Brave API. Faster, privacy-focused results.",
+      "schedule": "On-demand queries",
+      "lastRun": "March 28, 9:15 PM",
+      "lastResult": "Search queries responding in ~500-800ms"
     },
     {
-      "type": "success",
-      "title": "Brave Search Active",
-      "message": "Web search provider switched from Google to Brave API",
-      "time": "2026-03-28 20:43"
+      "icon": "📊",
+      "name": "STR Tracker Updates",
+      "status": "active",
+      "statusText": "Fixed", 
+      "body": "Daily AirDNA property updates for SF, Sierra, and Santa Cruz markets. Delivery issues resolved.",
+      "schedule": "Daily at 9:00 AM",
+      "lastRun": "March 27, 2026",
+      "lastResult": "Data updated successfully for all markets"
     }
   ],
-  "monitors": {
-    "str_tracker": {
-      "status": "fixed",
-      "next_update": "2026-03-29 09:00 AM",
-      "last_run": "Success"
-    },
-    "truck_yards": {
+  "tasks": [
+    {
+      "icon": "🏡",
+      "name": "STR Market Updates",
       "status": "active",
-      "next_update": "2026-03-29 02:00 PM", 
-      "last_run": "Success"
+      "statusText": "Scheduled",
+      "body": "Scrape AirDNA data for SF, Sierra Cabins, and Santa Cruz properties. Update investment tracker.",
+      "schedule": "Daily at 9:00 AM PST", 
+      "lastRun": "March 27, 2026",
+      "lastResult": "Successfully updated all markets - SF market score 93.0, Sierra properties showing 26.2% yields"
     },
-    "uk_flights": {
+    {
+      "icon": "🚛",
+      "name": "Truck Yard Monitor",
       "status": "active",
-      "next_update": "2026-03-29 11:00 AM",
-      "last_run": "Success"
+      "statusText": "Running",
+      "body": "Monitor Central Valley truck yard properties and industrial land. Track new listings and price changes.",
+      "schedule": "Daily at 2:00 PM PST",
+      "lastRun": "March 28, 2026", 
+      "lastResult": "Found 8 opportunities including $5.5M Stockton operating yard with $41K/mo income"
+    },
+    {
+      "icon": "✈️", 
+      "name": "UK Flight Monitor",
+      "status": "active",
+      "statusText": "Watching",
+      "body": "Monitor SFO→LHR flights for June 2-17 trip. Track Virgin Atlantic nonstop pricing.",
+      "schedule": "Daily at 11:00 AM PST",
+      "lastRun": "March 28, 2026",
+      "lastResult": "Monitoring Virgin Atlantic nonstop routes - prices stable around $900+"
+    },
+    {
+      "icon": "📈",
+      "name": "Daily Brief Generation", 
+      "status": "active",
+      "statusText": "Automated",
+      "body": "Generate morning brief with crypto prices, solar data, weather, and news headlines.",
+      "schedule": "Daily at 7:30 AM PST",
+      "lastRun": "March 28, 2026",
+      "lastResult": "Delivery configuration error - fixed to target iMessage properly"
     }
-  },
-  "lights": {
-    "active": [
-      {"name": "Patio", "brightness": "100%"},
-      {"name": "Kirpa's Light", "brightness": "100%"},
-      {"name": "String Lights", "brightness": "100%"},
-      {"name": "Outdoor", "brightness": "57%"}
-    ],
-    "total_on": 4
-  }
+  ],
+  "activityLog": [
+    {
+      "time": "9:26 PM",
+      "source": "Home Assistant",
+      "message": "Successfully connected via Nabu Casa cloud - all sensors operational"
+    },
+    {
+      "time": "9:21 PM", 
+      "source": "GitHub",
+      "message": "Configured authentication and deployed dashboard updates"
+    },
+    {
+      "time": "9:15 PM",
+      "source": "Web Search",
+      "message": "Switched to Brave Search API - testing successful with 550ms response time"
+    },
+    {
+      "time": "8:55 PM",
+      "source": "STR Tracker", 
+      "message": "Fixed delivery configuration - daily updates will resume tomorrow at 9:00 AM"
+    },
+    {
+      "time": "8:45 PM",
+      "source": "System",
+      "message": "Brave Search API configured and tested successfully"
+    }
+  ]
 }
