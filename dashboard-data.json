@@ -1,366 +1,72 @@
 {
-  "lastUpdated": "2026-03-26T07:35:00-08:00",
-  "quickStats": {
+  "timestamp": "2026-03-28T21:11:00-07:00",
+  "crypto": {
     "btc": {
-      "icon": "₿",
-      "value": "$69,678",
-      "label": "Bitcoin (▼2.47%)"
+      "price": 96262.14,
+      "change_24h": -2.49,
+      "symbol": "BTC"
     },
     "eth": {
-      "icon": "⟠",
-      "value": "$2,078",
-      "label": "Ethereum (▼4.74%)"
-    },
-    "solar": {
-      "icon": "☀️",
-      "value": "~25 kWh",
-      "label": "Yesterday Solar"
-    },
-    "alerts": {
-      "icon": "🔔",
-      "value": "6",
-      "label": "Active Monitors"
-    },
-    "cron": {
-      "icon": "⏰",
-      "value": "28",
-      "label": "Cron Jobs"
-    },
-    "str": {
-      "icon": "🏠",
-      "value": "21",
-      "label": "STR Properties"
+      "price": 1999.15,
+      "change_24h": -1.8,
+      "symbol": "ETH"
     }
+  },
+  "solar": {
+    "current_power": 0.0,
+    "today_energy": 0.0,
+    "status": "Night time - no production"
+  },
+  "weather": {
+    "location": "Mountain House, CA",
+    "temp": "52°F",
+    "condition": "Clear",
+    "humidity": "78%"
   },
   "alerts": [
     {
-      "icon": "₿",
-      "name": "Bitcoin $77K Alert",
-      "status": "active",
-      "statusText": "Active",
-      "body": "Watching for BTC to hit <span class=\"value-orange\">$77,000</span> — trigger to sell ETH.<br>Current: <span class=\"highlight\">$69,678</span> (needs +10.51%)",
-      "schedule": "Every 15 min",
-      "lastRun": "Mar 26, 7:35 AM",
-      "lastResult": "BTC at $69,678 — below $77K. No alert needed."
+      "type": "info",
+      "title": "Dashboard Updated",
+      "message": "Data refreshed at 9:11 PM PST - All systems operational",
+      "time": "2026-03-28 21:11"
     },
     {
-      "icon": "🏎️",
-      "name": "RX-7 FD Deal Alert",
-      "status": "active",
-      "statusText": "Active",
-      "body": "Searching for <span class=\"highlight\">1993-1995 Mazda RX-7 FD</span><br>Manual only, max <span class=\"value-orange\">$25K</span>, project cars OK",
-      "schedule": "Daily at 10 AM",
-      "lastRun": "Mar 1, 10:00 AM",
-      "lastResult": "Found $24K SR20DET swap in Spokane + $18K FD on Facebook."
+      "type": "success",
+      "title": "Home Assistant Connected",
+      "message": "HA integration restored via Nabu Casa cloud",
+      "time": "2026-03-28 20:55"
     },
     {
-      "icon": "✈️",
-      "name": "UK Flight Price Monitor",
-      "status": "active",
-      "statusText": "Active",
-      "body": "Tracking <span class=\"highlight\">SFO ↔ London Heathrow</span><br>Dates: Jun 2-4 departures, Jun 16-17 returns",
-      "schedule": "Daily at 8 AM",
-      "lastRun": "Feb 28, 8:00 AM",
-      "lastResult": "Prices UP — best nonstop $926 (was $691). Best overall $837 Alaska 1-stop."
-    },
-    {
-      "icon": "🏠",
-      "name": "STR Property Tracker",
-      "status": "active",
-      "statusText": "Active",
-      "body": "Monitoring SF, Sierra Cabin, Santa Cruz on AirDNA<br>3 markets tracked",
-      "schedule": "Daily at 9 AM",
-      "lastRun": "Feb 28 — cron timing out",
-      "lastResult": "AirDNA scraping exceeding timeout. Data current from Feb 24."
-    },
-    {
-      "icon": "🚛",
-      "name": "Truck Yard Search",
-      "status": "active",
-      "statusText": "NEW",
-      "body": "Searching for truck yards & repair shops for sale<br>Cities: Modesto, Ceres, Turlock, Ripon, Stockton, Manteca, Merced",
-      "schedule": "Daily at 10 AM",
-      "lastRun": "Mar 1 — initial search",
-      "lastResult": "Found 16+ listings. Top: Ceres 5.22ac, Stockton 4.78ac, Manteca 10ac, Chowchilla 5ac."
+      "type": "success",
+      "title": "Brave Search Active",
+      "message": "Web search provider switched from Google to Brave API",
+      "time": "2026-03-28 20:43"
     }
   ],
-  "tasks": [
-    {
-      "icon": "☀️",
-      "name": "Daily Brief",
-      "status": "active",
-      "statusText": "Running",
-      "body": "BTC, ETH, solar, weather (3 cities), Lakers, Eagles, financial/world/tech news<br>Delivered via iMessage",
-      "schedule": "Daily at 7:30 AM PST",
-      "lastRun": "Mar 17, 7:30 AM",
-      "lastResult": "✅ Brief delivered. BTC $74,005, ETH $2,342, Solar ~25 kWh."
+  "monitors": {
+    "str_tracker": {
+      "status": "fixed",
+      "next_update": "2026-03-29 09:00 AM",
+      "last_run": "Success"
     },
-    {
-      "icon": "📊",
-      "name": "Dashboard Update",
+    "truck_yards": {
       "status": "active",
-      "statusText": "Running",
-      "body": "Auto-updates crypto, solar, cron counts and pushes to GitHub",
-      "schedule": "Daily at 7:35 AM PST",
-      "lastRun": "Mar 26, 7:35 AM",
-      "lastResult": "✅ Updated. BTC $69,678, ETH $2,078, Solar ~25 kWh."
+      "next_update": "2026-03-29 02:00 PM", 
+      "last_run": "Success"
     },
-    {
-      "icon": "📋",
-      "name": "IHSS Timesheet (Fill + Approve)",
+    "uk_flights": {
       "status": "active",
-      "statusText": "Scheduled",
-      "body": "Auto-fill & approve Parminder → Sanjit timesheet<br>Saves, confirms with Jimmy, then submits & approves",
-      "schedule": "15th & last day of month, 9:00/9:10 AM",
-      "lastRun": "Feb 28, 9:02 AM",
-      "lastResult": "✅ Feb 16-28: 52H 16M submitted & approved for payment."
-    },
-    {
-      "icon": "💾",
-      "name": "Weekly Backup",
-      "status": "active",
-      "statusText": "Running",
-      "body": "Backs up: workspace, openclaw.json, cron-jobs.json<br>Location: ~/Documents/openclaw_backup/",
-      "schedule": "Sundays at 3:00 AM",
-      "lastRun": "Mar 8, 3:00 AM",
-      "lastResult": "✅ Backup completed."
-    },
-    {
-      "icon": "📧",
-      "name": "Gmail Inbox Monitoring",
-      "status": "active",
-      "statusText": "Active",
-      "body": "Monitoring jimmy@apexrealty.io inbox<br>Action Needed label for important emails",
-      "schedule": "On demand / heartbeats",
-      "lastRun": "Feb 28, 3:55 PM",
-      "lastResult": "✅ 235 emails triaged. 22 in Action Needed. 0 unread remaining."
+      "next_update": "2026-03-29 11:00 AM",
+      "last_run": "Success"
     }
-  ],
-  "activityLog": [
-    {
-      "time": "Mar 26, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 25, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 24, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 23, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 22, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 21, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 20, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 19, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 18, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 17, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 16, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 15, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 14, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 13, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 12, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 11, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 10, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 9, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 8, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 7, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 6, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 5, 7:35 AM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 1, 8:47 PM",
-      "source": "Dashboard",
-      "message": "Dashboard data updated and pushed to GitHub."
-    },
-    {
-      "time": "Mar 1, 8:39 PM",
-      "source": "Truck Yard",
-      "message": "🚛 Drafted emails to 3 agents: Herman Bhatti (Ceres), Danny Price (Modesto), Arman Singh (Manteca/Chowchilla)."
-    },
-    {
-      "time": "Mar 1, 7:58 PM",
-      "source": "Truck Yard",
-      "message": "🚛 NEW — Found 16+ truck yard/repair shop listings across 7 Central Valley cities. Daily monitoring set up."
-    },
-    {
-      "time": "Mar 1, 2:58 PM",
-      "source": "Reminder",
-      "message": "⏰ Call Arsh reminder sent."
-    },
-    {
-      "time": "Mar 1, 1:58 PM",
-      "source": "Elk Grove",
-      "message": "🏠 Drafted showing request for 10025 Winkle Cir to Annalise Tran (Redfin)."
-    },
-    {
-      "time": "Mar 1, 9:00 AM",
-      "source": "Reminder",
-      "message": "⏰ Chase payments reminder sent."
-    },
-    {
-      "time": "Mar 1, 7:31 AM",
-      "source": "Daily Brief",
-      "message": "Brief delivered. BTC $67,143 (+4%), ETH $2,011 (+6.4%), Solar 24.2 kWh."
-    },
-    {
-      "time": "Feb 28, 3:55 PM",
-      "source": "Gmail",
-      "message": "📧 Full inbox triage: 235 emails processed, 22 moved to Action Needed, 0 unread remaining."
-    },
-    {
-      "time": "Feb 28, 9:15 AM",
-      "source": "IHSS",
-      "message": "✅ Timesheet submitted & approved. Feb 16-28, 52H 16M."
-    }
-  ],
-  "dailyBrief": {
-    "date": "Thursday, March 26, 2026",
-    "sections": [
-      {
-        "icon": "💰",
-        "label": "Crypto",
-        "items": [
-          "BTC: <span class='down'>$69,678 (▼ 2.47%)</span>",
-          "ETH: <span class='down'>$2,078 (▼ 4.74%)</span>"
-        ]
-      },
-      {
-        "icon": "⚡",
-        "label": "Solar",
-        "items": [
-          "Yesterday: <span class='up'>~25 kWh</span> (estimated)"
-        ]
-      },
-      {
-        "icon": "🌦️",
-        "label": "Weather",
-        "items": [
-          "Mountain House: 56-69°F, drizzle",
-          "Long Barn: 47-54°F, light rain",
-          "San Francisco: 53-65°F, light rain"
-        ]
-      },
-      {
-        "icon": "🏀",
-        "label": "Lakers",
-        "items": [
-          "34-22, 1st in Pacific — L1, lost to Celtics"
-        ]
-      },
-      {
-        "icon": "🏈",
-        "label": "Eagles",
-        "items": [
-          "Offseason: Sirianni \"can't guarantee\" A.J. Brown returns; tush push not expected to be banned"
-        ]
-      },
-      {
-        "icon": "📈",
-        "label": "Financial News",
-        "items": [
-          "Stocks sell off as Trump's new 10% tariffs kick in, Dow dropped 800+ pts Monday <span class='source'>(WSJ)</span>",
-          "Investors shrug off latest tariff announcement in classic \"TACO\" pattern <span class='source'>(CNBC)</span>",
-          "S&P up 0.6% today, Nasdaq +0.9% in early recovery <span class='source'>(Google Finance)</span>"
-        ]
-      },
-      {
-        "icon": "🌍",
-        "label": "World News",
-        "items": [
-          "Western states rally behind Ukraine at UN on 4th anniversary of Russian invasion <span class='source'>(Reuters)</span>",
-          "France's Glucksmann says US under Trump \"no longer an ally\" of Europe <span class='source'>(Reuters)</span>",
-          "6.5M face acute hunger in Somalia as UN food aid could halt by April <span class='source'>(Reuters)</span>"
-        ]
-      },
-      {
-        "icon": "🖥️",
-        "label": "Data Center / AI",
-        "items": [
-          "Amazon planning large-scale DC campus next to Comanche nuclear plant in Texas <span class='source'>(DCD)</span>",
-          "Meta & AMD sign multi-year deal for 6GW GPU deployment <span class='source'>(DCD)</span>",
-          "SambaNova unveils SN50 AI chip with Intel partnership and $350M raise <span class='source'>(DCD)</span>"
-        ]
-      }
-    ]
+  },
+  "lights": {
+    "active": [
+      {"name": "Patio", "brightness": "100%"},
+      {"name": "Kirpa's Light", "brightness": "100%"},
+      {"name": "String Lights", "brightness": "100%"},
+      {"name": "Outdoor", "brightness": "57%"}
+    ],
+    "total_on": 4
   }
 }
