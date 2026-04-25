@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-04-21T14:37:20Z",
+  "lastUpdated": "2026-04-25T14:35:00Z",
   "quickStats": {
     "btc": {
       "icon": "BTC",
-      "value": "$76,243",
+      "value": "$77,748",
       "label": "Bitcoin"
     },
     "eth": {
@@ -13,48 +13,48 @@
     },
     "solar": {
       "icon": "SUN",
-      "value": "414 W",
+      "value": "530 W",
       "label": "Solar Power"
     },
     "weather": {
       "icon": "WX",
-      "value": "55F Light rain, mist",
+      "value": "54F Partly cloudy",
       "label": "Mountain House"
     }
   },
   "dailyBrief": {
-    "date": "Tuesday, April 21, 2026",
+    "date": "Saturday, April 25, 2026",
     "sections": [
       {
         "icon": "CRYPTO",
         "label": "Crypto Markets",
         "items": [
-          "BTC: $76,243 (+0.95% 24h)",
-          "ETH: $2,318 (+0.42% 24h)"
+          "BTC: $77,748 (-0.25% 24h)",
+          "ETH: $2,318 (+0.16% 24h)"
         ]
       },
       {
         "icon": "WX",
         "label": "Weather -- MH / Long Barn / SF",
         "items": [
-          "Mountain House: 55F Light rain, mist (High 60F, Tomorrow 66F)",
-          "Long Barn: 47F Patchy rain nearby (High 49F, Tomorrow 54F)",
-          "San Francisco: 54F Light rain, mist (High 56F, Tomorrow 59F)"
+          "Mountain House: 54F Partly cloudy (High 63F, Tomorrow 60F)",
+          "Long Barn: 40F Overcast (High 47F, Tomorrow 35F)",
+          "San Francisco: 52F Overcast (High 56F, Tomorrow 58F)"
         ]
       },
       {
         "icon": "SOLAR",
         "label": "Energy",
         "items": [
-          "Current solar output: 414 W",
-          "Energy today so far: 110 Wh"
+          "Current solar output: 530 W",
+          "Energy today so far: 288 Wh"
         ]
       },
       {
         "icon": "DASH",
         "label": "Dashboard Status",
         "items": [
-          "Data feeds refreshed from CoinGecko, wttr.in, and Home Assistant",
+          "Data feeds refreshed from CoinGecko, Open-Meteo, and Home Assistant",
           "Ready for GitHub Pages publish"
         ]
       }
@@ -62,37 +62,37 @@
   },
   "alerts": [
     {
-      "icon": "\u26a0\ufe0f",
+      "icon": "⚠️",
       "name": "Home Assistant Auth",
       "status": "active",
       "statusText": "Live",
       "body": "Home Assistant solar feed is online and returning live values.",
       "schedule": "Real-time solar monitoring",
-      "lastRun": "April 21, 2026, 7:37 AM",
-      "lastResult": "Solar now 414W, today 110Wh"
+      "lastRun": "April 25, 2026, 7:35 AM",
+      "lastResult": "Solar now 530W, today 288Wh"
     },
     {
-      "icon": "\u2705",
+      "icon": "✅",
       "name": "Crypto Price Updates",
       "status": "active",
       "statusText": "Updated",
-      "body": "Crypto refreshed: BTC $76,243 (+0.95%), ETH $2,318 (+0.42%).",
+      "body": "Crypto refreshed: BTC $77,748 (-0.25%), ETH $2,318 (+0.16%).",
       "schedule": "Real-time updates",
-      "lastRun": "April 21, 2026, 7:37 AM",
-      "lastResult": "BTC $76,243 (+0.95%), ETH $2,318 (+0.42%)"
+      "lastRun": "April 25, 2026, 7:35 AM",
+      "lastResult": "BTC $77,748 (-0.25%), ETH $2,318 (+0.16%)"
     },
     {
-      "icon": "\u2600\ufe0f",
+      "icon": "☀️",
       "name": "Weather Data",
       "status": "active",
       "statusText": "Current",
-      "body": "Weather now -- MH 55F Light rain, mist, Long Barn 47F Patchy rain nearby, SF 54F Light rain, mist.",
+      "body": "Weather now -- MH 54F Partly cloudy, Long Barn 40F Overcast, SF 52F Overcast.",
       "schedule": "Hourly updates",
-      "lastRun": "April 21, 2026, 7:37 AM",
-      "lastResult": "MH 55F Light rain, mist | LB 47F Patchy rain nearby | SF 54F Light rain, mist"
+      "lastRun": "April 25, 2026, 7:35 AM",
+      "lastResult": "MH 54F Partly cloudy | LB 40F Overcast | SF 52F Overcast"
     },
     {
-      "icon": "\ud83c\udfe0",
+      "icon": "🏠",
       "name": "STR Property Tracker",
       "status": "active",
       "statusText": "Scheduled",
@@ -104,7 +104,7 @@
   ],
   "tasks": [
     {
-      "icon": "\ud83c\udfe1",
+      "icon": "🏡",
       "name": "STR Market Updates",
       "status": "active",
       "statusText": "Scheduled",
@@ -114,7 +114,7 @@
       "lastResult": "Weekend cycle completed - monitoring SF, Sierra, Santa Cruz markets"
     },
     {
-      "icon": "\ud83d\ude9b",
+      "icon": "🚛",
       "name": "Truck Yard Monitor",
       "status": "active",
       "statusText": "Running",
@@ -124,27 +124,42 @@
       "lastResult": "Weekend monitoring - industrial properties tracked across Central Valley"
     },
     {
-      "icon": "\u2708\ufe0f",
+      "icon": "✈️",
       "name": "UK Flight Monitor",
       "status": "active",
       "statusText": "Watching",
-      "body": "Monitor SFO\u2192LHR flights for June 2-17 trip. Track Virgin Atlantic nonstop pricing and availability.",
+      "body": "Monitor SFO→LHR flights for June 2-17 trip. Track Virgin Atlantic nonstop pricing and availability.",
       "schedule": "Daily at 11:00 AM PST",
       "lastRun": "March 29, 2026",
       "lastResult": "Virgin Atlantic nonstop routes monitored - price tracking active"
     },
     {
-      "icon": "\ud83d\udcc8",
+      "icon": "📈",
       "name": "Daily Brief Generation",
       "status": "active",
       "statusText": "Automated",
       "body": "Generate morning brief with crypto prices, solar data, weather, and market updates for dashboard display.",
-      "schedule": "Daily at 8:00 AM PST",
-      "lastRun": "March 30, 2026",
-      "lastResult": "Monday morning update: Crypto +1.39%/+3.61%, Weather 54\u00b0F\u219289\u00b0F, Solar optimal conditions"
+      "schedule": "Daily at 7:30 AM PST",
+      "lastRun": "April 25, 2026",
+      "lastResult": "Saturday update: BTC $77,748 (-0.25%), ETH $2,318 (+0.16%), Solar 530W, MH 54F Partly cloudy"
     }
   ],
   "activityLog": [
+    {
+      "time": "7:35 AM",
+      "source": "Dashboard Update",
+      "message": "Pulled latest BTC/ETH, weather (MH/Long Barn/SF), and Home Assistant solar data"
+    },
+    {
+      "time": "7:35 AM",
+      "source": "Home Assistant",
+      "message": "Live solar telemetry: 530W now, 288Wh generated today"
+    },
+    {
+      "time": "7:35 AM",
+      "source": "Weather Service",
+      "message": "MH 54F Partly cloudy | LB 40F Overcast | SF 52F Overcast"
+    },
     {
       "time": "7:37 AM",
       "source": "Dashboard Update",
@@ -176,21 +191,6 @@
       "message": "MH 78F Sunny | LB 67F Sunny | SF 63F Partly cloudy"
     },
     {
-      "time": "6:56 PM",
-      "source": "Dashboard Update",
-      "message": "Pulled latest BTC/ETH, weather (MH/Long Barn/SF), and Home Assistant solar data"
-    },
-    {
-      "time": "6:56 PM",
-      "source": "Home Assistant",
-      "message": "Live solar telemetry: 555W now, 0Wh generated today"
-    },
-    {
-      "time": "6:56 PM",
-      "source": "Weather Service",
-      "message": "MH 78F Sunny | LB 67F Sunny | SF 63F Partly cloudy"
-    },
-    {
       "time": "3:45 PM",
       "source": "Dashboard Update",
       "message": "Pulled latest BTC/ETH, weather (MH/Long Barn/SF), and Home Assistant solar data"
@@ -203,7 +203,7 @@
     {
       "time": "3:45 PM",
       "source": "Weather Service",
-      "message": "MH 80F Sunny | LB 69F Sunny | SF 69F Partly cloudy"
+      "message": "MH 80F Sunny | LB 69F Sunny | SF 63F Partly cloudy"
     }
   ]
 }
