@@ -1,52 +1,52 @@
 {
-  "lastUpdated": "2026-05-09T14:35:00Z",
+  "lastUpdated": "2026-05-13T14:45:00Z",
   "quickStats": {
     "btc": {
       "icon": "BTC",
-      "value": "$80,297",
+      "value": "$79,733",
       "label": "Bitcoin"
     },
     "eth": {
       "icon": "ETH",
-      "value": "$2,307",
+      "value": "$2,266",
       "label": "Ethereum"
     },
     "solar": {
       "icon": "SUN",
-      "value": "380 W",
+      "value": "404 W",
       "label": "Solar Power"
     },
     "weather": {
       "icon": "WX",
-      "value": "59F Clear",
+      "value": "60F Clear",
       "label": "Mountain House"
     }
   },
   "dailyBrief": {
-    "date": "Saturday, May 9, 2026",
+    "date": "Wednesday, May 13, 2026",
     "sections": [
       {
         "icon": "CRYPTO",
         "label": "Crypto Markets",
         "items": [
-          "BTC: $80,297 (+0.39% 24h)",
-          "ETH: $2,307 (+1.22% 24h)"
+          "BTC: $79,733 (-1.14% 24h)",
+          "ETH: $2,266 (-0.29% 24h)"
         ]
       },
       {
         "icon": "WX",
         "label": "Weather -- MH / Long Barn / SF",
         "items": [
-          "Mountain House: 59F Clear (High 85F today, Overcast tomorrow)",
-          "Long Barn: 53F Clear (High 68F today, Overcast tomorrow)",
-          "San Francisco: 54F Partly Cloudy (High 67F today, Overcast tomorrow)"
+          "Mountain House: 60F Clear (High 75F today, Clear tomorrow)",
+          "Long Barn: 56F Clear (High 65F today, Clear tomorrow)",
+          "San Francisco: 55F Partly Cloudy (High 66F today, Clear tomorrow)"
         ]
       },
       {
         "icon": "SOLAR",
         "label": "Energy",
         "items": [
-          "Current solar output: 380 W",
+          "Current solar output: 404 W",
           "Energy today so far: 239 Wh"
         ]
       },
@@ -68,28 +68,28 @@
       "statusText": "Live",
       "body": "Home Assistant solar feed is online and returning live values.",
       "schedule": "Real-time solar monitoring",
-      "lastRun": "May 9, 2026, 7:35 AM",
-      "lastResult": "Solar now 380W, today 239Wh"
+      "lastRun": "May 13, 2026, 7:45 AM",
+      "lastResult": "Solar now 404W, today 239Wh"
     },
     {
       "icon": "✅",
       "name": "Crypto Price Updates",
       "status": "active",
       "statusText": "Updated",
-      "body": "Crypto refreshed: BTC $80,297 (+0.39%), ETH $2,307 (+1.22%).",
+      "body": "Crypto refreshed: BTC $79,733 (-1.14%), ETH $2,266 (-0.29%).",
       "schedule": "Real-time updates",
-      "lastRun": "May 9, 2026, 7:35 AM",
-      "lastResult": "BTC $80,297 (+0.39%) | ETH $2,307 (+1.22%)"
+      "lastRun": "May 13, 2026, 7:45 AM",
+      "lastResult": "BTC $79,733 (-1.14%) | ETH $2,266 (-0.29%)"
     },
     {
       "icon": "☀️",
       "name": "Weather Data",
       "status": "active",
       "statusText": "Current",
-      "body": "Weather now -- MH 59F Clear, Long Barn 53F Clear, SF 54F Partly Cloudy.",
+      "body": "Weather now -- MH 60F Clear, Long Barn 56F Clear, SF 55F Partly Cloudy.",
       "schedule": "Hourly updates",
-      "lastRun": "May 9, 2026, 7:35 AM",
-      "lastResult": "MH 59F Clear | LB 53F Clear | SF 54F Partly Cloudy"
+      "lastRun": "May 13, 2026, 7:45 AM",
+      "lastResult": "MH 60F Clear | LB 56F Clear | SF 55F Partly Cloudy"
     },
     {
       "icon": "🏠",
@@ -140,30 +140,30 @@
       "statusText": "Automated",
       "body": "Generate morning brief with crypto prices, solar data, weather, and market updates for dashboard display.",
       "schedule": "Daily at 7:30 AM PST",
-      "lastRun": "May 9, 2026",
-      "lastResult": "Saturday update: BTC $80,297 (+0.39%), ETH $2,307 (+1.22%), Solar 380W, MH 59F Clear"
+      "lastRun": "May 13, 2026",
+      "lastResult": "Wednesday update: BTC $79,733 (-1.14%), ETH $2,266 (-0.29%), Solar 404W, MH 60F Clear"
     }
   ],
   "activityLog": [
     {
-      "time": "7:35 AM",
+      "time": "7:45 AM",
       "source": "Dashboard Update",
       "message": "Pulled latest BTC/ETH, weather (MH/Long Barn/SF), and Home Assistant solar data"
     },
     {
-      "time": "7:35 AM",
+      "time": "7:45 AM",
       "source": "Home Assistant",
-      "message": "Live solar telemetry: 380W now, 239Wh generated today"
+      "message": "Live solar telemetry: 404W now, 239Wh generated today"
     },
     {
-      "time": "7:35 AM",
+      "time": "7:45 AM",
       "source": "Weather Service",
-      "message": "MH 59F Clear | LB 53F Clear | SF 54F Partly Cloudy"
+      "message": "MH 60F Clear | LB 56F Clear | SF 55F Partly Cloudy"
     },
     {
-      "time": "7:35 AM",
+      "time": "7:45 AM",
       "source": "Crypto",
-      "message": "BTC $80,297 (+0.39%) | ETH $2,307 (+1.22%)"
+      "message": "BTC $79,733 (-1.14%) | ETH $2,266 (-0.29%)"
     }
   ]
 }
